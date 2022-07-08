@@ -32,7 +32,7 @@ package com.mhschmieder.fxacousticstoolkit.control;
 
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleEditor;
-import com.mhschmieder.mathtoolkit.MathExt;
+import com.mhschmieder.mathtoolkit.MathUtilities;
 
 public final class FrequencyEditor extends DoubleEditor {
 
@@ -65,7 +65,7 @@ public final class FrequencyEditor extends DoubleEditor {
     public double adjustPrecision( final double doubleValue ) {
         final double precisionAdjustedValue = ( doubleValue >= 100d )
             ? Math.round( doubleValue )
-            : MathExt.nearestDecimal( doubleValue, 1 );
+            : MathUtilities.nearestDecimal( doubleValue, 1 );
         return precisionAdjustedValue;
     }
 
