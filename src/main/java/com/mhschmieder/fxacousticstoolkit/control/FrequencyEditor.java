@@ -65,7 +65,7 @@ public final class FrequencyEditor extends DoubleEditor {
     public double adjustPrecision( final double doubleValue ) {
         final double precisionAdjustedValue = ( doubleValue >= 100d )
             ? Math.round( doubleValue )
-            : MathUtilities.nearestDecimal( doubleValue, 1 );
+            : MathUtilities.roundDecimal( doubleValue, 1 );
         return precisionAdjustedValue;
     }
 
