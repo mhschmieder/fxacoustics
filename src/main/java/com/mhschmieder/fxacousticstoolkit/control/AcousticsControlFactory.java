@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2023 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -49,7 +49,7 @@ public final class AcousticsControlFactory {
     private AcousticsControlFactory() {}
 
     public static Spinner< Integer > getSplRangeSpinnerInstance( final ClientProperties clientProperties,
-                                                                 final boolean toolbarContext,
+                                                                 final boolean applyToolkitCss,
                                                                  final boolean useExtendedRange ) {
         final int minimumSplRangeDb = useExtendedRange ? 3 : 42;
         final int maximumSplRangeDb = useExtendedRange ? 120 : 72;
@@ -65,7 +65,7 @@ public final class AcousticsControlFactory {
         final String valueDescriptor = "an SPL range"; //$NON-NLS-1$
         final Spinner< Integer > splRangeSpinner = ControlFactory
                 .makeIntegerSpinner( clientProperties,
-                                     toolbarContext,
+                                     applyToolkitCss,
                                      valueDescriptor,
                                      minimumSplRangeDb,
                                      maximumSplRangeDb,
@@ -80,7 +80,7 @@ public final class AcousticsControlFactory {
     }
 
     public static Spinner< Double > getDitheringAmountSpinnerInstance( final ClientProperties clientProperties,
-                                                                       final boolean toolbarContext ) {
+                                                                       final boolean applyToolkitCss ) {
         // NOTE: The number formatter knows how to deal with percentages.
         final double minimumDitheringAmount = 0.0d;
         final double maximumDitheringAmount = 0.15d;
@@ -97,7 +97,7 @@ public final class AcousticsControlFactory {
         final String valueDescriptor = "amount to dither individual loudspeakers"; //$NON-NLS-1$
         final Spinner< Double > ditheringAmountSpinner = ControlFactory
                 .makeDoubleSpinner( clientProperties,
-                                    toolbarContext,
+                                    applyToolkitCss,
                                     valueDescriptor,
                                     minimumDitheringAmount,
                                     maximumDitheringAmount,
@@ -126,6 +126,7 @@ public final class AcousticsControlFactory {
         final DoubleEditor bandwidthEditor = new DoubleEditor( clientProperties,
                                                                initialText,
                                                                null,
+                                                               true,
                                                                0,
                                                                2,
                                                                0,
@@ -154,6 +155,7 @@ public final class AcousticsControlFactory {
         final DoubleEditor delayEditor = new DoubleEditor( clientProperties,
                                                            initialText,
                                                            null,
+                                                           true,
                                                            0,
                                                            2,
                                                            0,

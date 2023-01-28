@@ -40,12 +40,12 @@ import javafx.collections.ObservableList;
 public final class ButterworthFilterSlopeSelector extends IntegerSelector {
 
     public ButterworthFilterSlopeSelector( final ClientProperties pClientProperties,
-                                           final boolean toolbarContext,
+                                           final boolean applyToolkitCss,
                                            final String tooltipText,
                                            final short[] filterSlopeOrder,
                                            final int defaultFilterSlopeIndex ) {
         // Always call the superclass constructor first!
-        super( pClientProperties, true, tooltipText, toolbarContext, false, false );
+        super( pClientProperties, true, tooltipText, applyToolkitCss, false, false );
 
         try {
             initComboBox( filterSlopeOrder, defaultFilterSlopeIndex );
