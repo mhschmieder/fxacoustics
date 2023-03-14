@@ -30,6 +30,8 @@
  */
 package com.mhschmieder.fxacousticstoolkit.control;
 
+import org.apache.commons.math3.util.FastMath;
+
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleEditor;
 import com.mhschmieder.mathtoolkit.MathUtilities;
@@ -65,7 +67,7 @@ public final class FrequencyEditor extends DoubleEditor {
     @Override
     public double adjustPrecision( final double doubleValue ) {
         final double precisionAdjustedValue = ( doubleValue >= 100d )
-            ? Math.round( doubleValue )
+            ? FastMath.round( doubleValue )
             : MathUtilities.roundDecimal( doubleValue, 1 );
         return precisionAdjustedValue;
     }
