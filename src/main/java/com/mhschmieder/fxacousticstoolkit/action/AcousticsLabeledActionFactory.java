@@ -68,7 +68,7 @@ public class AcousticsLabeledActionFactory {
                                   splPaletteChoiceCollection,
                                   BUNDLE_NAME,
                                   "splPalette",
-                                  "/com/led24/icons/Palette16.png" );
+                                  "/icons/led24/Palette16.png" );
 
         return splPaletteChoiceGroup;
     }
@@ -109,7 +109,7 @@ public class AcousticsLabeledActionFactory {
                                          BUNDLE_NAME,
                                          "settings",
                                          "splRange",
-                                         "/com/acoustics/resources/SplRange16.png" );
+                                         "/icons/mhschmieder/SplRange16.png" );
     }
 
     @SuppressWarnings("nls")
@@ -118,7 +118,7 @@ public class AcousticsLabeledActionFactory {
                                          BUNDLE_NAME,
                                          "test",
                                          "ditheringAmount",
-                                         "/com/yusukeKamiyamane/icons/ImageBlur16.png" );
+                                         "/icons/yusukeKamiyamane/ImageBlur16.png" );
     }
 
     @SuppressWarnings("nls")
