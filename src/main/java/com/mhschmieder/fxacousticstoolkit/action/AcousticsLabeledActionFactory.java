@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2023 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -142,5 +142,4 @@ public class AcousticsLabeledActionFactory {
     public static XAction getSmoothingThirdOctaveChoice( final ClientProperties clientProperties ) {
         return getSmoothingChoice( clientProperties, "thirdOctave" );
     }
-
 }

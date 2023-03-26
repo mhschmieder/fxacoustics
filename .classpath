@@ -38,5 +38,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="/acousticstoolkit"/>
+	<classpathentry kind="src" path="/guitoolkit"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
