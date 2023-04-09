@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mhschmieder</groupId>
-    <artifactId>fxacousticstoolkit</artifactId>
+    <artifactId>fxacousticsgui</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>FxAcousticsToolkit</name>
-    <url>https://github.com/mhschmieder/acousticstoolkit </url>
+    <url>https://github.com/mhschmieder/fxacousticsgui</url>
     <description>Acoustics and audio engineering JavaFX GUI classes for Java.</description>
 
     <licenses>
@@ -21,9 +21,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/mhschmieder/fxacousticstoolkit </url>
-        <connection>scm:git:git://github.com/mhschmieder/fxacousticstoolkit.git</connection>
-        <developerConnection>scm:git:git@github.com:mhschmieder/fxacousticstoolkit.git</developerConnection>
+        <url>https://github.com/mhschmieder/fxacousticsgui</url>
+        <connection>scm:git:git://github.com/mhschmieder/fxacousticsgui.git</connection>
+        <developerConnection>scm:git:git@github.com:mhschmieder/fxacousticsgui.git</developerConnection>
     </scm>
 
     <developers>
