@@ -43,7 +43,7 @@ public class AcousticsLabeledControlFactory {
     // all non-Java resource files in a separate hierarchy from the Java package
     // for the source code.
     @SuppressWarnings("nls") public static final String BUNDLE_NAME =
-                                                                    "com.mhschmieder.fxacousticsgui.action.AcousticsActionLabels";
+                                                                    "properties.AcousticsActionLabels";
 
     /**
      * The default constructor is disabled, as this is a static factory class.
