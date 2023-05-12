@@ -38,8 +38,16 @@ import com.mhschmieder.mathtoolkit.MathUtilities;
 
 public final class FrequencyEditor extends DoubleEditor {
 
-    // Declare value increment/decrement amount for up and down arrow keys.
-    public static final double VALUE_INCREMENT_HZ = 0.1d;
+    // Declare default value increment/decrement amount for up and down arrow keys.
+    public static final double VALUE_INCREMENT_DEFAULT_HZ = 10.0d;
+    
+    // Declare default value for precision cutoff frequency.
+    public static final double PRECISION_CUTOFF_FREQUENCY_DEFAULT_HZ = 100.0d;
+    
+    /**
+     * Precision cutoff frequency for using integers vs. one decimal place.
+     */
+    protected double precisionCutoffFrequencyHz;
 
     public FrequencyEditor( final ClientProperties pClientProperties,
                             final String initialText,
@@ -61,7 +69,9 @@ public final class FrequencyEditor extends DoubleEditor {
                frequencyMinimumHz,
                frequencyMaximumHz,
                frequencyInitialHz,
-               VALUE_INCREMENT_HZ );
+               VALUE_INCREMENT_DEFAULT_HZ );
+        
+        precisionCutoffFrequencyHz = PRECISION_CUTOFF_FREQUENCY_DEFAULT_HZ;
     }
 
     @Override
@@ -70,5 +80,13 @@ public final class FrequencyEditor extends DoubleEditor {
             ? FastMath.round( doubleValue )
             : MathUtilities.roundDecimal( doubleValue, 1 );
         return precisionAdjustedValue;
+    }
+    
+    public final double getPrecisionCutoffFrequencyHz() {
+        return precisionCutoffFrequencyHz;
+    }
+    
+    public final void setPrecisionCutoffFrequencyHz( final double pPrecisionCutoffFrequencyHz ) {
+        precisionCutoffFrequencyHz = pPrecisionCutoffFrequencyHz;
     }
 }

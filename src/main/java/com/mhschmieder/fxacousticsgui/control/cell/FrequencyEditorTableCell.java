@@ -34,61 +34,34 @@ import java.util.List;
 
 import org.apache.commons.math3.util.FastMath;
 
+import com.mhschmieder.commonstoolkit.util.ClientProperties;
+import com.mhschmieder.fxacousticsgui.control.AcousticsControlFactory;
 import com.mhschmieder.fxguitoolkit.control.cell.DoubleEditorTableCell;
 import com.mhschmieder.mathtoolkit.MathUtilities;
 
+import javafx.scene.control.TextField;
+
 public class FrequencyEditorTableCell< RT, VT > extends DoubleEditorTableCell< RT, Double > {
 
-    public FrequencyEditorTableCell( final boolean pAllowedToBeBlank ) {
-        this( null, pAllowedToBeBlank );
+    public FrequencyEditorTableCell( final boolean pAllowedToBeBlank,
+                                     final ClientProperties pClientProperties ) {
+        this( null, pAllowedToBeBlank, pClientProperties );
     }
 
     public FrequencyEditorTableCell( final List< Integer > pUneditableRows,
-                                  final boolean pAllowedToBeBlank ) {
+                                     final boolean pAllowedToBeBlank,
+                                     final ClientProperties pClientProperties ) {
         // Always call the superclass constructor first!
-        super( pUneditableRows, pAllowedToBeBlank );
+        super( pUneditableRows, pAllowedToBeBlank, pClientProperties );
         
         // NOTE: For now, we don't support conversion to and from kHz.
         setMeasurementUnit( " Hz" );
     }
 
     @Override
-    protected Double getEditorValue() {
-        final Double editorValue = super.getEditorValue();
-        return ( editorValue != null )
-            ? Double.valueOf( adjustPrecision( editorValue.doubleValue() ) )
-            : null;
-    }
-
-    @Override
-    protected String getString() {
-        final Double itemValue = getItem();
-        if ( itemValue == null ) {
-            return "";
-        }
-        
-        final double doubleValue = itemValue.doubleValue();
-        final String stringValue = ( doubleValue == Double.POSITIVE_INFINITY )
-                ? "-"
-                : _numberFormat.format( adjustPrecision( doubleValue ) )
-                        + _measurementUnit;
-        
-        return stringValue;
-    }
-    
-    @Override
-    protected String getTextValue() {
-        final Double itemValue = getItem();
-        if ( itemValue == null ) {
-            return "";
-        }
-
-        final double doubleValue = itemValue.doubleValue();
-        final String textValue = ( doubleValue == Double.POSITIVE_INFINITY )
-                ? "-"
-                : Double.toString( adjustPrecision( doubleValue ) );
-        
-        return textValue;
+    protected TextField makeTextField() {
+        return AcousticsControlFactory.getFrequencyEditor( 
+            clientProperties, "", " Hz", 0.0d, 200000.0d, 0.0d );
     }
 
     public double adjustPrecision( final double doubleValue ) {

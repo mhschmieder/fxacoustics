@@ -37,7 +37,7 @@ import com.mhschmieder.fxguitoolkit.control.DoubleEditor;
 public final class GainEditor extends DoubleEditor {
 
     // Declare value increment/decrement amount for up and down arrow keys.
-    public static final double VALUE_INCREMENT_DB = 0.1d;
+    public static final double VALUE_INCREMENT_DEFAULT_DB = 0.1d;
 
     // Cache the preference for defaulting to negative gain.
     protected boolean          _defaultToNegativeGain;
@@ -63,7 +63,7 @@ public final class GainEditor extends DoubleEditor {
                gainMinimumDb,
                gainMaximumDb,
                gainDefaultDb,
-               VALUE_INCREMENT_DB );
+               VALUE_INCREMENT_DEFAULT_DB );
 
         _defaultToNegativeGain = defaultToNegativeGain;
     }
