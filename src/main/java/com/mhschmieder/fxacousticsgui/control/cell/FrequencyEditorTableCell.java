@@ -42,6 +42,12 @@ import com.mhschmieder.mathtoolkit.MathUtilities;
 import javafx.scene.control.TextField;
 
 public class FrequencyEditorTableCell< RT, VT > extends DoubleEditorTableCell< RT, Double > {
+    
+    public static final double DEFAULT_PRECISION_CUTOFF_FREQUENCY_HZ = 100.0d;
+    public static final int DEFAULT_NUMBER_OF_DECIMAL_PLACES = 1;
+    
+    protected double precisionCutoffFrequencyHz;    
+    protected int numberOfDecimalPlaces;
 
     public FrequencyEditorTableCell( final boolean pAllowedToBeBlank,
                                      final ClientProperties pClientProperties ) {
@@ -51,8 +57,25 @@ public class FrequencyEditorTableCell< RT, VT > extends DoubleEditorTableCell< R
     public FrequencyEditorTableCell( final List< Integer > pUneditableRows,
                                      final boolean pAllowedToBeBlank,
                                      final ClientProperties pClientProperties ) {
+        this( pUneditableRows, 
+              pAllowedToBeBlank, 
+              DEFAULT_PRECISION_CUTOFF_FREQUENCY_HZ,
+              DEFAULT_NUMBER_OF_DECIMAL_PLACES,
+              pClientProperties );
+    }
+
+    public FrequencyEditorTableCell( final List< Integer > pUneditableRows,
+                                     final boolean pAllowedToBeBlank,
+                                     final double pPrecisionCutoffFrequencyHz,
+                                     final int pNumberOfDecimalPlaces,
+                                     final ClientProperties pClientProperties ) {
         // Always call the superclass constructor first!
-        super( pUneditableRows, pAllowedToBeBlank, pClientProperties );
+        super( pUneditableRows, 
+               pAllowedToBeBlank, 
+               pClientProperties );
+        
+        precisionCutoffFrequencyHz = pPrecisionCutoffFrequencyHz;
+        numberOfDecimalPlaces = pNumberOfDecimalPlaces;
         
         // NOTE: For now, we don't support conversion to and from kHz.
         setMeasurementUnit( " Hz" );
@@ -65,9 +88,10 @@ public class FrequencyEditorTableCell< RT, VT > extends DoubleEditorTableCell< R
     }
 
     public double adjustPrecision( final double doubleValue ) {
-        final double precisionAdjustedValue = ( doubleValue >= 100.0d )
+        final double precisionAdjustedValue 
+            = ( doubleValue >= precisionCutoffFrequencyHz )
             ? FastMath.round( doubleValue )
-            : MathUtilities.roundDecimal( doubleValue, 1 );
+            : MathUtilities.roundDecimal( doubleValue, numberOfDecimalPlaces );
         return precisionAdjustedValue;
     }
 }
