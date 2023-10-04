@@ -36,6 +36,7 @@ import org.apache.commons.math3.util.FastMath;
 
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacousticsgui.control.AcousticsControlFactory;
+import com.mhschmieder.fxacousticsgui.control.FrequencyEditor;
 import com.mhschmieder.fxguitoolkit.control.cell.DoubleEditorTableCell;
 import com.mhschmieder.mathtoolkit.MathUtilities;
 
@@ -87,10 +88,26 @@ public class FrequencyEditorTableCell< RT, VT > extends DoubleEditorTableCell< R
         precisionCutoffFrequencyHz = pPrecisionCutoffFrequencyHz;
         numberOfDecimalPlaces = pNumberOfDecimalPlaces;
         
+        // NOTE: As the superclass constructor calls makeTextField() before we
+        //  have had a chance to set class-specific variables, we must forward
+        //  those values to the associated TextField instance now.
+        final FrequencyEditor frequencyEditor = ( FrequencyEditor) textField;
+        frequencyEditor.setPrecisionCutoffFrequencyHz( pPrecisionCutoffFrequencyHz );
+        frequencyEditor.setNumberOfDecimalPlaces( pNumberOfDecimalPlaces );
+        
         // NOTE: For now, we don't support conversion to and from kHz.
         setMeasurementUnit( " Hz" );
     }
 
+    /**
+     * Returns a FrequencyEditor to do the actual editing for this table cell.
+     * <p>
+     * NOTE: As this is called by the superclass constructor before all local
+     *  fields are initialized, we must reset the extra fields on the TextField
+     *  instance in this class's constructor after the super-constructor call.
+     * 
+     * @return a FrequencyEditor instance that matches the table cell's settings
+     */
     @Override
     protected TextField makeTextField() {
         return AcousticsControlFactory.getFrequencyEditor( 

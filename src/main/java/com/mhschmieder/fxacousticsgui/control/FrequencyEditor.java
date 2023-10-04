@@ -117,4 +117,12 @@ public final class FrequencyEditor extends DoubleEditor {
     public final void setPrecisionCutoffFrequencyHz( final double pPrecisionCutoffFrequencyHz ) {
         precisionCutoffFrequencyHz = pPrecisionCutoffFrequencyHz;
     }
+    
+    public final int getNumberOfDecimalPlaces() {
+        return numberOfDecimalPlaces;
+    }
+    
+    public final void setNumberOfDecimalPlaces( final int pNumberOfDecimalPlaces ) {
+        numberOfDecimalPlaces = pNumberOfDecimalPlaces;
+    }
 }
