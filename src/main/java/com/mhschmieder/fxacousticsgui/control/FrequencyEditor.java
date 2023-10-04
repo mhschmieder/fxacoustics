@@ -44,10 +44,18 @@ public final class FrequencyEditor extends DoubleEditor {
     // Declare default value for precision cutoff frequency.
     public static final double PRECISION_CUTOFF_FREQUENCY_DEFAULT_HZ = 100.0d;
     
+    // Declare default value for number of decimal places precision (when active).
+    public static final int NUMBER_OF_DECIMAL_PLACES_DEFAULT = 1;
+    
     /**
-     * Precision cutoff frequency for using integers vs. one decimal place.
+     * Precision cutoff frequency for using integers vs. decimal places.
      */
     protected double precisionCutoffFrequencyHz;
+    
+    /**
+     * The number of decimal places to use for display purposes, when active.
+     */
+    protected int numberOfDecimalPlaces;
 
     public FrequencyEditor( final ClientProperties pClientProperties,
                             final String initialText,
@@ -55,6 +63,24 @@ public final class FrequencyEditor extends DoubleEditor {
                             final double frequencyMinimumHz,
                             final double frequencyMaximumHz,
                             final double frequencyInitialHz ) {
+        this( pClientProperties,
+              initialText,
+              tooltipText,
+              frequencyMinimumHz,
+              frequencyMaximumHz,
+              frequencyInitialHz,
+              PRECISION_CUTOFF_FREQUENCY_DEFAULT_HZ,
+              NUMBER_OF_DECIMAL_PLACES_DEFAULT );
+    }
+
+    public FrequencyEditor( final ClientProperties pClientProperties,
+                            final String initialText,
+                            final String tooltipText,
+                            final double frequencyMinimumHz,
+                            final double frequencyMaximumHz,
+                            final double frequencyInitialHz,
+                            final double pPrecisionCutoffFrequencyHz,
+                            final int pNumberOfDecimalPlaces ) {
         // Always call the superclass constructor first!
         // NOTE: We use up to one decimal place of precision for displaying
         // frequency, and four decimal places for parsing frequency.
@@ -71,14 +97,16 @@ public final class FrequencyEditor extends DoubleEditor {
                frequencyInitialHz,
                VALUE_INCREMENT_DEFAULT_HZ );
         
-        precisionCutoffFrequencyHz = PRECISION_CUTOFF_FREQUENCY_DEFAULT_HZ;
+        precisionCutoffFrequencyHz = pPrecisionCutoffFrequencyHz;
+        numberOfDecimalPlaces = pNumberOfDecimalPlaces;
     }
 
     @Override
     public double adjustPrecision( final double doubleValue ) {
-        final double precisionAdjustedValue = ( doubleValue >= 100.0d )
+        final double precisionAdjustedValue 
+            = ( doubleValue >= precisionCutoffFrequencyHz )
             ? FastMath.round( doubleValue )
-            : MathUtilities.roundDecimal( doubleValue, 1 );
+            : MathUtilities.roundDecimal( doubleValue, numberOfDecimalPlaces );
         return precisionAdjustedValue;
     }
     

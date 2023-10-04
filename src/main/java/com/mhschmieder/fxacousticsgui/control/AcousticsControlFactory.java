@@ -176,7 +176,9 @@ public final class AcousticsControlFactory {
                                                       final String measurementUnitString,
                                                       final double minimumValue,
                                                       final double maximumValue,
-                                                      final double initialValue ) {
+                                                      final double initialValue,
+                                                      final double pPrecisionCutoffFrequencyHz,
+                                                      final int pNumberOfDecimalPlaces ) {
         // Get the current value and format it as initial text.
         // TODO: Make sure this is locale-sensitive?
         final String initialText = Double.toString( initialValue );
@@ -186,7 +188,9 @@ public final class AcousticsControlFactory {
                                                                      tooltipText,
                                                                      minimumValue,
                                                                      maximumValue,
-                                                                     initialValue );
+                                                                     initialValue,
+                                                                     pPrecisionCutoffFrequencyHz,
+                                                                     pNumberOfDecimalPlaces );
 
         frequencyEditor.setMeasurementUnitString( measurementUnitString );
 

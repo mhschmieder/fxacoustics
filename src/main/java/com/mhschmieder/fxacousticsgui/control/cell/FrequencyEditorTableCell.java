@@ -43,10 +43,20 @@ import javafx.scene.control.TextField;
 
 public class FrequencyEditorTableCell< RT, VT > extends DoubleEditorTableCell< RT, Double > {
     
-    public static final double DEFAULT_PRECISION_CUTOFF_FREQUENCY_HZ = 100.0d;
-    public static final int DEFAULT_NUMBER_OF_DECIMAL_PLACES = 1;
+    // Declare default value for precision cutoff frequency.
+    public static final double PRECISION_CUTOFF_FREQUENCY_DEFAULT_HZ = 100.0d;
     
-    protected double precisionCutoffFrequencyHz;    
+    // Declare default value for number of decimal places precision (when active).
+    public static final int NUMBER_OF_DECIMAL_PLACES_DEFAULT = 1;
+    
+    /**
+     * Precision cutoff frequency for using integers vs. decimal places.
+     */
+    protected double precisionCutoffFrequencyHz;
+    
+    /**
+     * The number of decimal places to use for display purposes, when active.
+     */
     protected int numberOfDecimalPlaces;
 
     public FrequencyEditorTableCell( final boolean pAllowedToBeBlank,
@@ -59,8 +69,8 @@ public class FrequencyEditorTableCell< RT, VT > extends DoubleEditorTableCell< R
                                      final ClientProperties pClientProperties ) {
         this( pUneditableRows, 
               pAllowedToBeBlank, 
-              DEFAULT_PRECISION_CUTOFF_FREQUENCY_HZ,
-              DEFAULT_NUMBER_OF_DECIMAL_PLACES,
+              PRECISION_CUTOFF_FREQUENCY_DEFAULT_HZ,
+              NUMBER_OF_DECIMAL_PLACES_DEFAULT,
               pClientProperties );
     }
 
@@ -84,7 +94,14 @@ public class FrequencyEditorTableCell< RT, VT > extends DoubleEditorTableCell< R
     @Override
     protected TextField makeTextField() {
         return AcousticsControlFactory.getFrequencyEditor( 
-            clientProperties, "", " Hz", 0.0d, 200000.0d, 0.0d );
+            clientProperties, 
+            "", 
+            " Hz", 
+            0.0d, 
+            200000.0d, 
+            0.0d,
+            precisionCutoffFrequencyHz,
+            numberOfDecimalPlaces );
     }
 
     public double adjustPrecision( final double doubleValue ) {
