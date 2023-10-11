@@ -36,6 +36,8 @@ import com.mhschmieder.fxguitoolkit.control.TextSelector;
 
 /**
  * This is a selector for different Smoothing resolutions.
+ * <p>
+ * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
  */
 public final class SmoothingSelector extends TextSelector {
 
@@ -60,8 +62,9 @@ public final class SmoothingSelector extends TextSelector {
                pToolbarContext,
                false,
                false,
-               SMOOTHINGS,
-               SMOOTHING_DEFAULT );
+               SMOOTHINGS.length,
+               SMOOTHING_DEFAULT,
+               SMOOTHINGS );
     }
 
     public Smoothing getSmoothing() {

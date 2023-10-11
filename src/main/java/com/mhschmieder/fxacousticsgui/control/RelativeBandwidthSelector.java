@@ -38,6 +38,8 @@ import com.mhschmieder.fxguitoolkit.control.TextSelector;
  * The Relative Bandwidth Combo Box is a chooser for bandwidth ranges generally
  * considered useful for acoustic analysis modes, meaning divisors of 1/3 octave
  * as well as full octave. We do not yet support multi-octave bandwidth.
+ * <p>
+ * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
  */
 public final class RelativeBandwidthSelector extends TextSelector {
 
@@ -68,8 +70,9 @@ public final class RelativeBandwidthSelector extends TextSelector {
                pToolbarContext,
                false,
                false,
-               RELATIVE_BANDWIDTHS,
-               RELATIVE_BANDWIDTH_DEFAULT );
+               RELATIVE_BANDWIDTHS.length,
+               RELATIVE_BANDWIDTH_DEFAULT,
+               RELATIVE_BANDWIDTHS );
     }
 
     public RelativeBandwidth getRelativeBandwidth() {

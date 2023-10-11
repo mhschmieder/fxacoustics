@@ -35,6 +35,11 @@ import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.TextSelector;
 
+/**
+ * A selector for a switchable enumeration of Octave Ranges.
+ * <p>
+ * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
+ */
 public class OctaveRangeSelector extends TextSelector {
 
     // Default Octave Ranges, for best "out of box" experience.
@@ -88,10 +93,11 @@ public class OctaveRangeSelector extends TextSelector {
                applyToolkitCss,
                false,
                false,
+               12,
+               OCTAVE_RANGE_NARROW_DEFAULT,
                useExtendedRange
                    ? OCTAVE_RANGES_NARROW_EXTENDED
-                   : OCTAVE_RANGES_NARROW,
-               OCTAVE_RANGE_NARROW_DEFAULT );
+                   : OCTAVE_RANGES_NARROW );
         
         _useExtendedRange = useExtendedRange;
     }
