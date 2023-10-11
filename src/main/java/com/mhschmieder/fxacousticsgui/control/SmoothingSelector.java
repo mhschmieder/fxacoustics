@@ -30,8 +30,6 @@
  */
 package com.mhschmieder.fxacousticsgui.control;
 
-import org.apache.commons.math3.util.FastMath;
-
 import com.mhschmieder.acousticstoolkit.Smoothing;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.XComboBox;
@@ -50,20 +48,6 @@ public final class SmoothingSelector extends XComboBox< Smoothing > {
                false,
                false,
                Smoothing.values() );
-
-        try {
-            // By default, make sure the list displays all items without scrolling.
-            initComboBox( Smoothing.values().length );
-        }
-        catch ( final Exception ex ) {
-            ex.printStackTrace();
-        }
-    }
-
-    private final void initComboBox( final int visibleRowCount ) {
-        // Ensure that the desired number of rows are visible before scrolling,
-        // but also make sure the overall list doesn't get unwieldy.
-        setVisibleRowCount( FastMath.min( visibleRowCount, 25 ) );
     }
 
     public Smoothing getSmoothing() {
