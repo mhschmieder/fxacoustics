@@ -30,29 +30,16 @@
  */
 package com.mhschmieder.fxacousticsgui.control;
 
+import org.apache.commons.math3.util.FastMath;
+
 import com.mhschmieder.acousticstoolkit.Smoothing;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.fxguitoolkit.control.TextSelector;
+import com.mhschmieder.fxguitoolkit.control.XComboBox;
 
 /**
  * This is a selector for different Smoothing resolutions.
- * <p>
- * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
  */
-public final class SmoothingSelector extends TextSelector {
-
-    // Default Smoothing, for best "out of box" experience.
-    public static final String    SMOOTHING_DEFAULT =
-                                                    Smoothing.defaultValue().toPresentationString();
-
-    private static final String[] SMOOTHINGS        =
-                                             new String[] {
-                                                            Smoothing.NARROW_BAND
-                                                                    .toPresentationString(),
-                                                            Smoothing.SIXTH_OCTAVE_BAND
-                                                                    .toPresentationString(),
-                                                            Smoothing.THIRD_OCTAVE_BAND
-                                                                    .toPresentationString() };
+public final class SmoothingSelector extends XComboBox< Smoothing > {
 
     public SmoothingSelector( final ClientProperties pClientProperties,
                               final boolean pToolbarContext ) {
@@ -62,13 +49,25 @@ public final class SmoothingSelector extends TextSelector {
                pToolbarContext,
                false,
                false,
-               SMOOTHINGS.length,
-               SMOOTHING_DEFAULT,
-               SMOOTHINGS );
+               Smoothing.values() );
+
+        try {
+            // By default, make sure the list displays all items without scrolling.
+            initComboBox( Smoothing.values().length );
+        }
+        catch ( final Exception ex ) {
+            ex.printStackTrace();
+        }
+    }
+
+    private final void initComboBox( final int visibleRowCount ) {
+        // Ensure that the desired number of rows are visible before scrolling,
+        // but also make sure the overall list doesn't get unwieldy.
+        setVisibleRowCount( FastMath.min( visibleRowCount, 25 ) );
     }
 
     public Smoothing getSmoothing() {
-        return Smoothing.fromPresentationString( getTextValue() );
+        return getValue();
     }
 
     public int getSmoothingOctaveDivider() {
@@ -78,7 +77,7 @@ public final class SmoothingSelector extends TextSelector {
     }
 
     public void setSmoothing( final Smoothing smoothing ) {
-        setTextValue( smoothing.toPresentationString() );
+        setValue( smoothing );
     }
 
     public void setSmoothingOctaveDivider( final int octaveDivider ) {
@@ -86,5 +85,4 @@ public final class SmoothingSelector extends TextSelector {
         final Smoothing smoothing = Smoothing.fromOctaveDivider( octaveDivider );
         setSmoothing( smoothing );
     }
-
 }
