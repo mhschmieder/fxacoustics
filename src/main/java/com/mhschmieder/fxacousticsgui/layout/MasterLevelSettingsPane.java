@@ -137,7 +137,7 @@ public final class MasterLevelSettingsPane extends BorderPane {
         _masterLevelSettingsControls._polarityToggleButton.selectedProperty()
                 .addListener( ( observableValue,
                                 oldValue,
-                                newValue ) -> syncPolarityToView( newValue ) );
+                                newValue ) -> setPolarityReversed( newValue ) );
 
         _masterLevelSettingsGrid
                 .add( _masterLevelSettingsControls._gainEditor, COLUMN_GAIN, ROW_SETTINGS_FIRST );
@@ -145,7 +145,7 @@ public final class MasterLevelSettingsPane extends BorderPane {
         _masterLevelSettingsControls._gainEditor.focusedProperty()
                 .addListener( ( observableValue, oldValue, newValue ) -> {
                     if ( !newValue ) {
-                        syncGainToView();
+                        updateGainModel();
                     }
                 } );
 
@@ -156,7 +156,7 @@ public final class MasterLevelSettingsPane extends BorderPane {
         _masterLevelSettingsControls._muteToggleButton.selectedProperty()
                 .addListener( ( observableValue,
                                 oldValue,
-                                newValue ) -> syncMuteToView( newValue ) );
+                                newValue ) -> setMuted( newValue ) );
 
         // Center the grid for the most balanced layout.
         setCenter( _masterLevelSettingsGrid );
@@ -168,11 +168,29 @@ public final class MasterLevelSettingsPane extends BorderPane {
     public void setMasterLevelSettings( final MasterLevelSettings masterLevelSettings ) {
         _masterLevelSettings = masterLevelSettings;
 
-        // Sync the view to show the new Master Level Settings.
-        syncViewToMasterLevelSettings();
+        // Update the view to show the new Master Level Settings.
+        updateMasterLevelSettingsView();
     }
 
-    public void syncGainToView() {
+    private void setMuted( final boolean muted ) {
+        final boolean oldProcessorMuted = _masterLevelSettings.isMuted();
+        final boolean processorMutedChanged = oldProcessorMuted != muted;
+
+        if ( processorMutedChanged ) {
+            _masterLevelSettings.setMuted( muted );
+        }
+    }
+
+    private void setPolarityReversed( final boolean polarityReversed ) {
+        final boolean oldPolarityReversed = _masterLevelSettings.isPolarityReversed();
+        final boolean polarityChanged = oldPolarityReversed != polarityReversed;
+
+        if ( polarityChanged ) {
+            _masterLevelSettings.setPolarityReversed( polarityReversed );
+        }
+    }
+
+    public void updateGainModel() {
         final double newProcessorGain = _masterLevelSettingsControls._gainEditor.getValue();
         final double oldProcessorGain = _masterLevelSettings.getGain();
         final boolean processorGainChanged =
@@ -183,25 +201,7 @@ public final class MasterLevelSettingsPane extends BorderPane {
         }
     }
 
-    private void syncMuteToView( final boolean muted ) {
-        final boolean oldProcessorMuted = _masterLevelSettings.isMuted();
-        final boolean processorMutedChanged = oldProcessorMuted != muted;
-
-        if ( processorMutedChanged ) {
-            _masterLevelSettings.setMuted( muted );
-        }
-    }
-
-    private void syncPolarityToView( final boolean polarityReversed ) {
-        final boolean oldPolarityReversed = _masterLevelSettings.isPolarityReversed();
-        final boolean polarityChanged = oldPolarityReversed != polarityReversed;
-
-        if ( polarityChanged ) {
-            _masterLevelSettings.setPolarityReversed( polarityReversed );
-        }
-    }
-
-    public void syncViewToMasterLevelSettings() {
+    public void updateMasterLevelSettingsView() {
         final boolean polarityReversed = _masterLevelSettings.isPolarityReversed();
         _masterLevelSettingsControls._polarityToggleButton.setSelected( polarityReversed );
 
