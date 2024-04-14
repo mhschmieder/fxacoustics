@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2024 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -34,7 +34,6 @@ import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacousticsgui.layout.DitheringPane;
 import com.mhschmieder.fxacousticsgui.layout.SplRangePane;
 import com.mhschmieder.fxguitoolkit.control.ControlFactory;
-import com.mhschmieder.fxguitoolkit.control.DoubleEditor;
 
 import javafx.scene.control.Spinner;
 
@@ -110,115 +109,4 @@ public final class AcousticsControlFactory {
 
         return ditheringAmountSpinner;
     }
-
-    // This is a helper method to get a stand-alone Bandwidth Editor.
-    public static DoubleEditor getBandwidthEditor( final ClientProperties clientProperties,
-                                                   final double minimumValue,
-                                                   final double maximumValue,
-                                                   final double initialValue ) {
-        // Get the current value and format it as initial text.
-        // TODO: Make sure this is locale-sensitive?
-        final String initialText = Double.toString( initialValue );
-
-        // Declare value increment/decrement amount for up and down arrow keys.
-        final double valueIncrement = 0.01d;
-
-        final DoubleEditor bandwidthEditor = new DoubleEditor( clientProperties,
-                                                               initialText,
-                                                               null,
-                                                               true,
-                                                               0,
-                                                               2,
-                                                               0,
-                                                               4,
-                                                               minimumValue,
-                                                               maximumValue,
-                                                               0.0d,
-                                                               valueIncrement );
-
-        return bandwidthEditor;
-    }
-
-    // Helper method to get a stand-alone Delay Editor.
-    public static DoubleEditor getDelayEditor( final ClientProperties clientProperties,
-                                               final String measurementUnitString,
-                                               final double minimumValue,
-                                               final double maximumValue,
-                                               final double initialValue ) {
-        // Get the current value and format it as initial text.
-        // TODO: Make sure this is locale-sensitive?
-        final String initialText = Double.toString( initialValue );
-
-        // Declare value increment/decrement amount for up and down arrow keys.
-        final double valueIncrementMs = 0.1d;
-
-        final DoubleEditor delayEditor = new DoubleEditor( clientProperties,
-                                                           initialText,
-                                                           null,
-                                                           true,
-                                                           0,
-                                                           2,
-                                                           0,
-                                                           4,
-                                                           minimumValue,
-                                                           maximumValue,
-                                                           0.0d,
-                                                           valueIncrementMs );
-
-        delayEditor.setMeasurementUnitString( measurementUnitString );
-
-        return delayEditor;
-    }
-
-    // Helper method to get a standalone Frequency Editor.
-    public static FrequencyEditor getFrequencyEditor( final ClientProperties clientProperties,
-                                                      final String tooltipText,
-                                                      final String measurementUnitString,
-                                                      final double minimumValue,
-                                                      final double maximumValue,
-                                                      final double initialValue,
-                                                      final double pPrecisionCutoffFrequencyHz,
-                                                      final int pNumberOfDecimalPlaces ) {
-        // Get the current value and format it as initial text.
-        // TODO: Make sure this is locale-sensitive?
-        final String initialText = Double.toString( initialValue );
-
-        final FrequencyEditor frequencyEditor = new FrequencyEditor( clientProperties,
-                                                                     initialText,
-                                                                     tooltipText,
-                                                                     minimumValue,
-                                                                     maximumValue,
-                                                                     initialValue,
-                                                                     pPrecisionCutoffFrequencyHz,
-                                                                     pNumberOfDecimalPlaces );
-
-        frequencyEditor.setMeasurementUnitString( measurementUnitString );
-
-        return frequencyEditor;
-    }
-
-    // This is a helper method to get a standalone Gain Editor.
-    public static GainEditor getGainEditor( final ClientProperties clientProperties,
-                                            final String measurementUnitString,
-                                            final double gainMinimumDb,
-                                            final double gainMaximumDb,
-                                            final double gainDefaultDb,
-                                            final boolean defaultToNegativeGain ) {
-        // Get the current value and format it as initial text.
-        // TODO: Make sure this is locale-sensitive?
-        final String initialText = Double.toString( gainDefaultDb );
-
-        final GainEditor gainEditor = new GainEditor( clientProperties,
-                                                      initialText,
-                                                      null,
-                                                      gainMinimumDb,
-                                                      gainMaximumDb,
-                                                      gainDefaultDb,
-                                                      defaultToNegativeGain );
-
-        gainEditor.setMeasurementUnitString( measurementUnitString );
-
-        return gainEditor;
-    }
-
 }

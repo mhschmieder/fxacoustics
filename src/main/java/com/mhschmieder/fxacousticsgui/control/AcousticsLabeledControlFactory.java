@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2024 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,7 +32,6 @@ package com.mhschmieder.fxacousticsgui.control;
 
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.SceneGraphUtilities;
-import com.mhschmieder.fxguitoolkit.control.XToggleButton;
 
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -71,45 +70,4 @@ public class AcousticsLabeledControlFactory {
         return SceneGraphUtilities
                 .getLabeledCheckBox( clientProperties, BUNDLE_NAME, "test", "useDithering" );
     }
-
-    public static XToggleButton getPolarityToggleButton( final boolean applyAspectRatio,
-                                                         final boolean selected ) {
-        final String selectedText = "Reversed"; //$NON-NLS-1$
-        final String deselectedText = "Normal"; //$NON-NLS-1$
-        final String tooltipText = "Click to Toggle Polarity Status Between Normal and Reversed"; //$NON-NLS-1$
-
-        // NOTE: JavaFX CSS automatically darkens unselected buttons, and
-        // auto-selects the foreground for text fill; we use a custom fill.
-        final XToggleButton toggleButton = new XToggleButton( selectedText,
-                                                              deselectedText,
-                                                              tooltipText,
-                                                              "polarity-toggle", //$NON-NLS-1$
-                                                              applyAspectRatio,
-                                                              3.0d,
-                                                              false,
-                                                              selected );
-
-        return toggleButton;
-    }
-
-    public static XToggleButton getMuteToggleButton( final boolean applyAspectRatio,
-                                                     final boolean selected ) {
-        final String selectedText = "Muted"; //$NON-NLS-1$
-        final String deselectedText = "Mute"; //$NON-NLS-1$
-        final String tooltipText = "Click to Toggle Mute Status Between Muted and Unmuted"; //$NON-NLS-1$
-
-        // NOTE: JavaFX CSS automatically darkens unselected buttons, and
-        // auto-selects the foreground for text fill; we use a custom fill.
-        final XToggleButton toggleButton = new XToggleButton( selectedText,
-                                                              deselectedText,
-                                                              tooltipText,
-                                                              "mute-toggle", //$NON-NLS-1$
-                                                              applyAspectRatio,
-                                                              3.0d,
-                                                              false,
-                                                              selected );
-
-        return toggleButton;
-    }
-
 }
