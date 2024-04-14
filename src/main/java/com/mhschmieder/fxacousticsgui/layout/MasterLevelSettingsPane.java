@@ -104,7 +104,7 @@ public final class MasterLevelSettingsPane extends BorderPane {
         // Make the grid of individual Master Level Settings controls.
         _masterLevelSettingsGrid = new GridPane();
 
-        // We center the column header labels to follow Compass conventions.
+        // We center the column header labels to follow standard conventions.
         final Label polarityLabel = GuiUtilities.getColumnHeader( 
                 ProcessingLabelFactory.getPolarityLabel() );
         final Label gainLabel = GuiUtilities.getColumnHeader( 

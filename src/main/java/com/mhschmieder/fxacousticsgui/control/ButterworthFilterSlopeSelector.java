@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxacousticsgui.control;
 
-import com.mhschmieder.acousticstoolkit.DigitalFilterUtilities;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.IntegerSelector;
+import com.mhschmieder.sigproctoolkit.dsp.DigitalFilterUtilities;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
