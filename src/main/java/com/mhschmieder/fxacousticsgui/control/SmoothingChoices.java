@@ -77,7 +77,7 @@ public final class SmoothingChoices {
                                   smoothingChoiceCollection,
                                   AcousticsLabeledActionFactory.BUNDLE_NAME,
                                   "smoothing",
-                                  "/com/ahaSoft/icons/Smooth16.png",
+                                  "/icons/ahaSoft/Smooth16.png",
                                   true );
     }
 
