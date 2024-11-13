@@ -91,14 +91,22 @@ public class AcousticsLabeledActionFactory {
 
     @SuppressWarnings("nls")
     public static XAction getSplPaletteColors256Choice( final ClientProperties clientProperties ) {
-        return ActionFactory
-                .makeChoice( clientProperties, BUNDLE_NAME, "splPalette", "colors256", null, true );
+        return ActionFactory.makeChoice( clientProperties, 
+                                         BUNDLE_NAME, 
+                                         "splPalette", 
+                                         "colors256", 
+                                         "/icons/ahaSoft/256Colors16.png", 
+                                         true );
     }
 
     @SuppressWarnings("nls")
     public static XAction getSplPaletteColors64Choice( final ClientProperties clientProperties ) {
-        return ActionFactory
-                .makeChoice( clientProperties, BUNDLE_NAME, "splPalette", "colors64", null, true );
+        return ActionFactory.makeChoice( clientProperties,
+                                         BUNDLE_NAME, 
+                                         "splPalette", 
+                                         "colors64", 
+                                         "/icons/ahaSoft/16Colors16.png", 
+                                         true );
     }
 
     @SuppressWarnings("nls")
