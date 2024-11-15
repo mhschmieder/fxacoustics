@@ -76,7 +76,7 @@ public final class DitheringStage extends XStage {
     @SuppressWarnings("nls")
     private void initStage() {
         // First have the superclass initialize its content.
-        initStage( "/icons/yusukeKamiyamane/ImageBlur16.png", 240d, 120d, false );
+        initStage( "/icons/yusukeKamiyamane/fugue/ImageBlur16.png", 240d, 120d, false );
     }
 
     public boolean isUseDithering() {

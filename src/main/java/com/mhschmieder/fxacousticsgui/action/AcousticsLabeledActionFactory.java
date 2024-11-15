@@ -124,7 +124,7 @@ public class AcousticsLabeledActionFactory {
                                          BUNDLE_NAME,
                                          "test",
                                          "ditheringAmount",
-                                         "/icons/yusukeKamiyamane/ImageBlur16.png" );
+                                         "/icons/yusukeKamiyamane/fugue/ImageBlur16.png" );
     }
 
     @SuppressWarnings("nls")
