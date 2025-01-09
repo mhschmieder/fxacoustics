@@ -39,5 +39,7 @@
 	</classpathentry>
 	<classpathentry kind="src" path="/acousticstoolkit"/>
 	<classpathentry kind="src" path="/guitoolkit"/>
+	<classpathentry kind="src" path="/pdftoolkit"/>
+	<classpathentry kind="lib" path="/server/deployment/jars/PDFjet.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -69,6 +69,11 @@
             <artifactId>controlsfx</artifactId>
             <version>8.40.18</version>
         </dependency>
+        <dependency>
+        	<groupId>com.mhschmieder</groupId>
+        	<artifactId>pdftoolkit</artifactId>
+        	<version>0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
