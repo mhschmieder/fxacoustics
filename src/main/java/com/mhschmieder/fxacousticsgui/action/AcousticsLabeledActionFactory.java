@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -147,5 +147,174 @@ public class AcousticsLabeledActionFactory {
     @SuppressWarnings("nls")
     public static XAction getSmoothingThirdOctaveChoice( final ClientProperties clientProperties ) {
         return getSmoothingChoice( clientProperties, "thirdOctave" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDiv1DbChoice( final ClientProperties clientProperties ) {
+        return getDivChoice( clientProperties, "div1db" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDiv2DbChoice( final ClientProperties clientProperties ) {
+        return getDivChoice( clientProperties, "div2db" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDiv3DbChoice( final ClientProperties clientProperties ) {
+        return getDivChoice( clientProperties, "div3db" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDiv6DbChoice( final ClientProperties clientProperties ) {
+        return getDivChoice( clientProperties, "div6db" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDiv10DbChoice( final ClientProperties clientProperties ) {
+        return getDivChoice( clientProperties, "div10db" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDiv12DbChoice( final ClientProperties clientProperties ) {
+        return getDivChoice( clientProperties, "div12db" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDiv15DbChoice( final ClientProperties clientProperties ) {
+        return getDivChoice( clientProperties, "div15db" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDiv20DbChoice( final ClientProperties clientProperties ) {
+        return getDivChoice( clientProperties, "div20db" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDiv30DbChoice( final ClientProperties clientProperties ) {
+        return getDivChoice( clientProperties, "div30db" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getDivChoice( final ClientProperties clientProperties,
+                                        final String itemName ) {
+        return ActionFactory
+                .makeChoice( clientProperties, BUNDLE_NAME, "verticalZoom", itemName, null, true );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom1120msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "1120ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom112msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "112ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom140msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "140ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom14msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "14ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom280msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "280ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom28msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "28ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom560msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "560ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom56msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "56ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom70msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "70ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoom7msChoice( final ClientProperties clientProperties ) {
+        return getHorizontalZoomChoice( clientProperties, "7ms" );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getHorizontalZoomChoice( final ClientProperties clientProperties,
+                                                   final String itemName ) {
+        return ActionFactory
+                .makeChoice( clientProperties, BUNDLE_NAME, "horizontalZoom", itemName, null, true );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getZoomFullFrequencyRangeChoice( final ClientProperties clientProperties ) {
+        return ActionFactory.makeChoice( clientProperties,
+                                         BUNDLE_NAME,
+                                         "horizontalZoom",
+                                         "fullFrequencyRange",
+                                         null,
+                                         true );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getZoomHighFrequencyRangeChoice( final ClientProperties clientProperties ) {
+        return ActionFactory.makeChoice( clientProperties,
+                                         BUNDLE_NAME,
+                                         "horizontalZoom",
+                                         "highFrequency",
+                                         null,
+                                         true );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getZoomLowFrequencyRangeChoice( final ClientProperties clientProperties ) {
+        return ActionFactory.makeChoice( clientProperties,
+                                         BUNDLE_NAME,
+                                         "horizontalZoom",
+                                         "lowFrequency",
+                                         null,
+                                         true );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getZoomLowMidFrequencyRangeChoice( final ClientProperties clientProperties ) {
+        return ActionFactory.makeChoice( clientProperties,
+                                         BUNDLE_NAME,
+                                         "horizontalZoom",
+                                         "lowMidFrequency",
+                                         null,
+                                         true );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getZoomMidFrequencyRangeChoice( final ClientProperties clientProperties ) {
+        return ActionFactory.makeChoice( clientProperties,
+                                         BUNDLE_NAME,
+                                         "horizontalZoom",
+                                         "midFrequency",
+                                         null,
+                                         true );
+    }
+
+    @SuppressWarnings("nls")
+    public static XAction getZoomMidHighFrequencyRangeChoice( final ClientProperties clientProperties ) {
+        return ActionFactory.makeChoice( clientProperties,
+                                         BUNDLE_NAME,
+                                         "horizontalZoom",
+                                         "midHighFrequency",
+                                         null,
+                                         true );
     }
 }
