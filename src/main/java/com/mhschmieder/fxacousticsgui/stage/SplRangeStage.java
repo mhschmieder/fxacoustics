@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@ package com.mhschmieder.fxacousticsgui.stage;
 import com.mhschmieder.commonstoolkit.branding.ProductBranding;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacousticsgui.layout.SplRangePane;
-import com.mhschmieder.fxguitoolkit.action.ToolsActions;
+import com.mhschmieder.fxguitoolkit.action.SimulationActions;
 import com.mhschmieder.fxguitoolkit.control.PredictToolBar;
 import com.mhschmieder.fxguitoolkit.stage.XStage;
 
@@ -45,25 +45,27 @@ public final class SplRangeStage extends XStage {
     public static final String SPL_RANGE_FRAME_TITLE_DEFAULT = "Sound Field SPL Range"; //$NON-NLS-1$
 
     // Declare the actions.
-    public ToolsActions        _toolsActions;
+    public SimulationActions simulationActions;
 
     // Declare the main tool bar.
-    public PredictToolBar      _toolBar;
+    public PredictToolBar toolBar;
 
     // Declare the main content pane.
-    public SplRangePane        _splRangePane;
+    public SplRangePane splRangePane;
     
     // Flag for whether to allow extended SPL Range values.
-    protected final boolean _useExtendedRange;
+    protected final boolean useExtendedRange;
 
-    @SuppressWarnings("nls")
-    public SplRangeStage( final ProductBranding productBranding,
+    public SplRangeStage( final ProductBranding pProductBranding,
                           final ClientProperties pClientProperties,
-                          final boolean useExtendedRange ) {
+                          final boolean pUseExtendedRange ) {
         // Always call the superclass constructor first!
-        super( SPL_RANGE_FRAME_TITLE_DEFAULT, "splRange", productBranding, pClientProperties );
+        super( SPL_RANGE_FRAME_TITLE_DEFAULT, 
+               "splRange", 
+               pProductBranding, 
+               pClientProperties );
         
-        _useExtendedRange = useExtendedRange;
+        useExtendedRange = pUseExtendedRange;
 
         try {
             initStage();
@@ -75,46 +77,52 @@ public final class SplRangeStage extends XStage {
 
     public int getSplRangeDb() {
         // Forward this method to the SPL Range Pane.
-        return _splRangePane.getSplRangeDb();
+        return splRangePane.getSplRangeDb();
     }
 
-    @SuppressWarnings("nls")
     private void initStage() {
         // First have the superclass initialize its content.
-        initStage( "/icons/mhschmieder/SplRange16.png", 300d, 180d, false );
+        initStage( "/icons/mhschmieder/SplRange16.png", 
+                   300.0d, 
+                   180.0d,
+                   false );
     }
 
     public boolean isAutoRangeSpl() {
         // Forward this method to the SPL Range Pane.
-        return _splRangePane.isAutoRangeSpl();
+        return splRangePane.isAutoRangeSpl();
     }
 
     // Load the relevant actions for this Stage.
     @Override
     protected void loadActions() {
         // Make all of the actions.
-        _toolsActions = new ToolsActions( clientProperties );
+        simulationActions = new SimulationActions( clientProperties );
     }
 
     @Override
     protected Node loadContent() {
         // Instantiate and return the custom Content Node.
-        _splRangePane = new SplRangePane( clientProperties, _useExtendedRange );
-        return _splRangePane;
+        splRangePane = new SplRangePane( clientProperties, 
+                                         useExtendedRange );
+        return splRangePane;
     }
 
     // Add the Tool Bar for this Stage.
     @Override
     public ToolBar loadToolBar() {
         // Build the Tool Bar for this Stage.
-        _toolBar = new PredictToolBar( clientProperties, _toolsActions );
+        toolBar = new PredictToolBar( clientProperties, 
+                                      simulationActions );
 
         // Return the Tool Bar so the superclass can use it.
-        return _toolBar;
+        return toolBar;
     }
 
-    public void updateSplRange( final boolean autoRangeSpl, final int splRangeDb ) {
+    public void updateSplRange( final boolean autoRangeSpl, 
+                                final int splRangeDb ) {
         // Forward this method to the SPL Range Pane.
-        _splRangePane.updateSplRange( autoRangeSpl, splRangeDb );
+        splRangePane.updateSplRange( autoRangeSpl, 
+                                     splRangeDb );
     }
 }

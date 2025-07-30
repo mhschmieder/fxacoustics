@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@ package com.mhschmieder.fxacousticsgui.stage;
 import com.mhschmieder.commonstoolkit.branding.ProductBranding;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacousticsgui.layout.DitheringPane;
-import com.mhschmieder.fxguitoolkit.action.ToolsActions;
+import com.mhschmieder.fxguitoolkit.action.SimulationActions;
 import com.mhschmieder.fxguitoolkit.control.PredictToolBar;
 import com.mhschmieder.fxguitoolkit.stage.XStage;
 
@@ -42,75 +42,80 @@ import javafx.scene.control.ToolBar;
 
 public final class DitheringStage extends XStage {
 
-    public static final String DITHERING_FRAME_TITLE_DEFAULT = "Dithering Amount"; //$NON-NLS-1$
+    public static final String DITHERING_FRAME_TITLE_DEFAULT = "Dithering Amount";
 
     // Declare the actions.
-    public ToolsActions        _toolsActions;
+    public SimulationActions simulationActions;
 
     // Declare the main tool bar.
-    public PredictToolBar      _toolBar;
+    public PredictToolBar toolBar;
 
     // Declare the main content pane.
-    public DitheringPane       _ditheringPane;
+    public DitheringPane ditheringPane;
     
     // Initial value for dithering disablement (can't be passed to layout pane).
-    protected final boolean _initialDisableDithering;
+    protected final boolean initialDisableDithering;
 
-    @SuppressWarnings("nls")
-    public DitheringStage( final ProductBranding productBranding,
+    public DitheringStage( final ProductBranding pProductBranding,
                            final ClientProperties pClientProperties,
-                           final boolean initialDisableDithering ) {
+                           final boolean pInitialDisableDithering ) {
         // Always call the superclass constructor first!
-        super( DITHERING_FRAME_TITLE_DEFAULT, "dithering", productBranding, pClientProperties );
+        super( DITHERING_FRAME_TITLE_DEFAULT, 
+               "dithering", 
+               pProductBranding, 
+               pClientProperties );
         
-        _initialDisableDithering = initialDisableDithering;
+        initialDisableDithering = pInitialDisableDithering;
 
         initStage();
     }
 
     public double getDitheringAmount() {
         // Forward this method to the Dithering Pane.
-        return _ditheringPane.getDitheringAmount();
+        return ditheringPane.getDitheringAmount();
     }
 
-    @SuppressWarnings("nls")
     private void initStage() {
         // First have the superclass initialize its content.
-        initStage( "/icons/yusukeKamiyamane/fugue/ImageBlur16.png", 240d, 120d, false );
+        initStage( "/icons/yusukeKamiyamane/fugue/ImageBlur16.png", 
+                   240.0d, 
+                   120.0d, 
+                   false );
     }
 
     public boolean isUseDithering() {
         // Forward this method to the Dithering Pane.
-        return _ditheringPane.isUseDithering();
+        return ditheringPane.isUseDithering();
     }
 
     // Load the relevant actions for this Stage.
     @Override
     protected void loadActions() {
         // Make all of the actions.
-        _toolsActions = new ToolsActions( clientProperties );
+        simulationActions = new SimulationActions( clientProperties );
     }
 
     @Override
     protected Node loadContent() {
         // Instantiate and return the custom Content Node.
-        _ditheringPane = new DitheringPane( clientProperties, _initialDisableDithering );
-        return _ditheringPane;
+        ditheringPane = new DitheringPane( clientProperties, initialDisableDithering );
+        return ditheringPane;
     }
 
     // Add the Tool Bar for this Stage.
     @Override
     public ToolBar loadToolBar() {
         // Build the Tool Bar for this Stage.
-        _toolBar = new PredictToolBar( clientProperties, _toolsActions );
+        toolBar = new PredictToolBar( clientProperties, simulationActions );
 
         // Return the Tool Bar so the superclass can use it.
-        return _toolBar;
+        return toolBar;
     }
 
     // NOTE: This is the method to use when updating from Preferences.
-    public void updateDithering( final boolean useDithering, final double ditheringAmount ) {
+    public void updateDithering( final boolean useDithering, 
+                                 final double ditheringAmount ) {
         // Forward this method to the Dithering Pane.
-        _ditheringPane.updateDithering( useDithering, ditheringAmount );
+        ditheringPane.updateDithering( useDithering, ditheringAmount );
     }
 }
