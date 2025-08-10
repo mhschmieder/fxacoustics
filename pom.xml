@@ -8,7 +8,7 @@
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>FxAcousticsToolkit</name>
+    <name>fxacousticsgui</name>
     <url>https://github.com/mhschmieder/fxacousticsgui</url>
     <description>Acoustics and audio engineering JavaFX GUI classes for Java.</description>
 
