@@ -118,7 +118,7 @@ public class AcousticsLabeledActionFactory {
                                          BUNDLE_NAME,
                                          "settings",
                                          "splRange",
-                                         "/icons/mhschmieder/SplRange16.png" );
+                                         "/icons/mhschmieder/JetPalette16.png" );
     }
 
     public static XAction getTestDitheringAmountAction( final ClientProperties clientProperties ) {

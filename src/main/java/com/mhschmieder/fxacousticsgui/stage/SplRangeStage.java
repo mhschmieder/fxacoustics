@@ -82,7 +82,7 @@ public final class SplRangeStage extends XStage {
 
     private void initStage() {
         // First have the superclass initialize its content.
-        initStage( "/icons/mhschmieder/SplRange16.png", 
+        initStage( "/icons/mhschmieder/JetPalette16.png", 
                    300.0d, 
                    180.0d,
                    false );
