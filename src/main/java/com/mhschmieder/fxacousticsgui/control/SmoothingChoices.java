@@ -30,17 +30,16 @@
  */
 package com.mhschmieder.fxacousticsgui.control;
 
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.controlsfx.control.action.Action;
-
 import com.mhschmieder.acousticstoolkit.Smoothing;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacousticsgui.action.AcousticsLabeledActionFactory;
 import com.mhschmieder.fxguitoolkit.action.ActionFactory;
 import com.mhschmieder.fxguitoolkit.action.XAction;
 import com.mhschmieder.fxguitoolkit.action.XActionGroup;
+import org.controlsfx.control.action.Action;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * This is a struct-like container for Smoothing choices.

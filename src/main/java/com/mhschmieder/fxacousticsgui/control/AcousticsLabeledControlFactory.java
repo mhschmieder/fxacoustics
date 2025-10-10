@@ -32,7 +32,6 @@ package com.mhschmieder.fxacousticsgui.control;
 
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.SceneGraphUtilities;
-
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 

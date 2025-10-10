@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,19 +30,17 @@
  */
 package com.mhschmieder.fxacousticsgui.control;
 
-import java.util.TreeSet;
-
-import org.apache.commons.math3.util.FastMath;
-
 import com.mhschmieder.acousticstoolkit.CenterFrequencies;
 import com.mhschmieder.acousticstoolkit.FrequencyRange;
 import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleSelector;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.apache.commons.math3.util.FastMath;
+
+import java.util.TreeSet;
 
 public final class CenterFrequencySelector extends DoubleSelector {
     
@@ -100,10 +98,11 @@ public final class CenterFrequencySelector extends DoubleSelector {
         // Set the non-editable drop-list of Full Octave Band Center
         // Frequencies, selected at 4 kHz.
         updateCenterFrequencyForBandwidthAndOctave( RelativeBandwidth
-                .fromPresentationString( RelativeBandwidthSelector.RELATIVE_BANDWIDTH_DEFAULT ),
-                                                    OctaveRangeSelector.OCTAVE_RANGE_WIDE_DEFAULT,
-                                                    4000d,
-                                                    false );
+                        .defaultValue().valueOfLabel(
+                                RelativeBandwidthSelector.RELATIVE_BANDWIDTH_DEFAULT ),
+                OctaveRangeSelector.OCTAVE_RANGE_WIDE_DEFAULT,
+                4000d,
+                false );
     }
 
     public void setCenterFrequency( final String sOctaveRange, final String sCenterFrequency ) {

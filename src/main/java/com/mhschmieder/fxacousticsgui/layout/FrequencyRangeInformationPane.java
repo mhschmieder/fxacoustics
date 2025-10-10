@@ -30,8 +30,6 @@
  */
 package com.mhschmieder.fxacousticsgui.layout;
 
-import java.text.NumberFormat;
-
 import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
@@ -43,13 +41,14 @@ import com.pdfjet.Align;
 import com.pdfjet.PDF;
 import com.pdfjet.Page;
 import com.pdfjet.Point;
-
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+
+import java.text.NumberFormat;
 
 public final class FrequencyRangeInformationPane extends VBox {
 

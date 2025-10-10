@@ -34,7 +34,6 @@ import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacousticsgui.layout.DitheringPane;
 import com.mhschmieder.fxacousticsgui.layout.SplRangePane;
 import com.mhschmieder.fxguitoolkit.control.ControlFactory;
-
 import javafx.scene.control.Spinner;
 
 /**

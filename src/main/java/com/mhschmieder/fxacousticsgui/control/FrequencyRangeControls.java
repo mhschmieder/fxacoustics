@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.fxacousticsgui.control;
 
-import java.text.NumberFormat;
-
 import com.mhschmieder.acousticstoolkit.FrequencyRange;
 import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
+
+import java.text.NumberFormat;
 
 public final class FrequencyRangeControls {
 

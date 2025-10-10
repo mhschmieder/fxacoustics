@@ -33,7 +33,6 @@ package com.mhschmieder.fxacousticsgui.layout;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacousticsgui.control.AcousticsControlFactory;
 import com.mhschmieder.fxacousticsgui.control.AcousticsLabeledControlFactory;
-
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

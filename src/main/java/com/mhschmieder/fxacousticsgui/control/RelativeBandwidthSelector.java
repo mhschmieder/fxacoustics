@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -44,23 +44,17 @@ import com.mhschmieder.fxguitoolkit.control.TextSelector;
 public final class RelativeBandwidthSelector extends TextSelector {
 
     // Default Relative Bandwidth, for best "out of box" experience.
-    public static final String    RELATIVE_BANDWIDTH_DEFAULT = RelativeBandwidth.defaultValue()
-            .toPresentationString();
+    public static final String    RELATIVE_BANDWIDTH_DEFAULT
+            = RelativeBandwidth.defaultValue().label();
 
-    private static final String[] RELATIVE_BANDWIDTHS        =
-                                                      new String[] {
-                                                                     RelativeBandwidth.ONE_OCTAVE
-                                                                             .toPresentationString(),
-                                                                     RelativeBandwidth.THIRD_OCTAVE
-                                                                             .toPresentationString(),
-                                                                     RelativeBandwidth.SIXTH_OCTAVE
-                                                                             .toPresentationString(),
-                                                                     RelativeBandwidth.TWELTH_OCTAVE
-                                                                             .toPresentationString(),
-                                                                     RelativeBandwidth.TWENTYFOURTH_OCTAVE
-                                                                             .toPresentationString(),
-                                                      // RelativeBandwidth.FORTYEIGHTH_OCTAVE.toPresentationString()
-                                                      };
+    private static final String[] RELATIVE_BANDWIDTHS
+            = new String[] {
+                    RelativeBandwidth.ONE_OCTAVE.label(),
+            RelativeBandwidth.THIRD_OCTAVE.label(),
+            RelativeBandwidth.SIXTH_OCTAVE.label(),
+            RelativeBandwidth.TWELTH_OCTAVE.label(),
+            RelativeBandwidth.TWENTYFOURTH_OCTAVE.label() }; //,
+            //RelativeBandwidth.FORTYEIGHTH_OCTAVE.label() };
 
     public RelativeBandwidthSelector( final ClientProperties pClientProperties,
                                       final boolean pToolbarContext ) {
@@ -76,11 +70,10 @@ public final class RelativeBandwidthSelector extends TextSelector {
     }
 
     public RelativeBandwidth getRelativeBandwidth() {
-        return RelativeBandwidth.fromPresentationString( getTextValue() );
+        return RelativeBandwidth.defaultValue().valueOfLabel( getTextValue() );
     }
 
     public void setRelativeBandwidth( final RelativeBandwidth relativeBandwidth ) {
-        setTextValue( relativeBandwidth.toPresentationString() );
+        setTextValue( relativeBandwidth.label() );
     }
-
 }

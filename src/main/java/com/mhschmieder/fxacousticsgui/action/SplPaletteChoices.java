@@ -30,14 +30,13 @@
  */
 package com.mhschmieder.fxacousticsgui.action;
 
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.controlsfx.control.action.Action;
-
 import com.mhschmieder.acousticstoolkit.SplPaletteResolution;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.action.XAction;
+import org.controlsfx.control.action.Action;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * This is a struct-like container for generic SPL Palette choices, generally
