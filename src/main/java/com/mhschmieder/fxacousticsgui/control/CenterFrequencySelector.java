@@ -97,15 +97,15 @@ public final class CenterFrequencySelector extends DoubleSelector {
 
         // Set the non-editable drop-list of Full Octave Band Center
         // Frequencies, selected at 4 kHz.
-        updateCenterFrequencyForBandwidthAndOctave( RelativeBandwidth
-                        .defaultValue().valueOfLabel(
-                                RelativeBandwidthSelector.RELATIVE_BANDWIDTH_DEFAULT ),
+        updateCenterFrequencyForBandwidthAndOctave(
+                RelativeBandwidth.defaultValue(),
                 OctaveRangeSelector.OCTAVE_RANGE_WIDE_DEFAULT,
-                4000d,
+                4000.0d,
                 false );
     }
 
-    public void setCenterFrequency( final String sOctaveRange, final String sCenterFrequency ) {
+    public void setCenterFrequency( final String sOctaveRange,
+                                    final String sCenterFrequency ) {
         final ObservableList< String > items = getItems();
         if ( ( sCenterFrequency != null ) && items.contains( sCenterFrequency ) ) {
             setValue( sCenterFrequency );

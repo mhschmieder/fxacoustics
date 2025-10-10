@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -34,18 +34,20 @@ import com.mhschmieder.acousticstoolkit.FrequencyRange;
 import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
+import com.mhschmieder.fxguitoolkit.control.ListViewUtilities;
+import com.mhschmieder.fxguitoolkit.control.XComboBox;
 
 import java.text.NumberFormat;
 
 public final class FrequencyRangeControls {
 
     // Declare controls for Frequency Range related actions.
-    public RelativeBandwidthSelector _relativeBandwidthSelector;
+    public XComboBox< RelativeBandwidth > _relativeBandwidthSelector;
     public OctaveRangeSelector       _octaveRangeSelector;
     public CenterFrequencySelector   _centerFrequencySelector;
 
     // Number format cache used for locale-specific number formatting.
-    protected NumberFormat           _numberFormat;
+    private NumberFormat             _numberFormat;
 
     // Default constructor
     public FrequencyRangeControls( final NumberFormat numberFormat,
@@ -57,9 +59,19 @@ public final class FrequencyRangeControls {
         _numberFormat = numberFormat;
 
         // Make the individual controls.
-        _relativeBandwidthSelector =
-                                   new RelativeBandwidthSelector( pClientProperties, applyToolkitCss );
-        _octaveRangeSelector = new OctaveRangeSelector( pClientProperties, 
+        final RelativeBandwidth[] supportedValues = new RelativeBandwidth[] {
+                RelativeBandwidth.ONE_OCTAVE,
+                RelativeBandwidth.THIRD_OCTAVE,
+                RelativeBandwidth.SIXTH_OCTAVE,
+                RelativeBandwidth.TWELTH_OCTAVE,
+                RelativeBandwidth.TWENTYFOURTH_OCTAVE }; //,
+                //RelativeBandwidth.FORTYEIGHTH_OCTAVE };
+        _relativeBandwidthSelector = ListViewUtilities.makeLabeledSelector(
+                pClientProperties,
+                supportedValues,
+                "Relative Bandwidth",
+                RelativeBandwidth.defaultValue() );
+        _octaveRangeSelector = new OctaveRangeSelector( pClientProperties,
                                                         applyToolkitCss, 
                                                         useExtendedRange );
         _centerFrequencySelector = new CenterFrequencySelector( pClientProperties, 
@@ -77,10 +89,11 @@ public final class FrequencyRangeControls {
     }
 
     public RelativeBandwidth getRelativeBandwidth() {
-        return _relativeBandwidthSelector.getRelativeBandwidth();
+        return _relativeBandwidthSelector.getValue();
     }
 
-    public void setCenterFrequency( final String sOctaveRange, final double centerFrequency ) {
+    public void setCenterFrequency( final String sOctaveRange,
+                                    final double centerFrequency ) {
         final String sCenterFrequency = FrequencySignalUtilities
                 .getFormattedFrequency( centerFrequency, _numberFormat );
         _centerFrequencySelector.setCenterFrequency( sOctaveRange, sCenterFrequency );
@@ -91,7 +104,7 @@ public final class FrequencyRangeControls {
     }
 
     public void setRelativeBandwidth( final RelativeBandwidth relativeBandwidth ) {
-        _relativeBandwidthSelector.setRelativeBandwidth( relativeBandwidth );
+        _relativeBandwidthSelector.setValue( relativeBandwidth );
     }
 
     public void updateCenterFrequencyForBandwidthAndOctave( final RelativeBandwidth relativeBandwidth,
