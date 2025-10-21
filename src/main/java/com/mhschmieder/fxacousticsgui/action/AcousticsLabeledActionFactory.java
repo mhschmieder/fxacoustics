@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020, 2025 Mark Schmieder
@@ -46,8 +46,7 @@ import java.util.Collection;
 public class AcousticsLabeledActionFactory {
 
     // NOTE: We must substitute "." for resource directory tree delimiters.
-    @SuppressWarnings("nls") public static final String BUNDLE_NAME =
-                                                                    "properties.AcousticsActionLabels";
+    public static final String BUNDLE_NAME = "properties.AcousticsActionLabels";
 
     /**
      * The default constructor is disabled, as this is a static factory class.
