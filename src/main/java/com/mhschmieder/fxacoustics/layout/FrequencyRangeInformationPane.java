@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020, 2025 Mark Schmieder
@@ -21,14 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxAcousticsGui Library
+ * This file is part of the FxAcoustics Library
  *
  * You should have received a copy of the MIT License along with the
- * FxAcousticsGui Library. If not, see <https://opensource.org/licenses/MIT>.
+ * FxAcoustics Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxacousticsgui
+ * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacousticsgui.layout;
+package com.mhschmieder.fxacoustics.layout;
 
 import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;

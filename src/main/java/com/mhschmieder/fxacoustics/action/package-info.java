@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,14 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxAcousticsGui Library
+ * This file is part of the FxAcoustics Library
  *
- * You should have received a copy of the MIT License along with the
- * FxAcousticsGui Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxAcoustics
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxacousticsgui
+ * Project: https://github.com/mhschmieder/fxacoustics
  */
 /**
- * This package is for Stages and Stage-related acoustic features using JavaFX.
+ * This package contains the FxAcousticsGui Library's action framework for
+ * acoustics.
+ *
+ * @version 1.0
+ *
+ * @author Mark Schmieder
  */
-package com.mhschmieder.fxacousticsgui.stage;
+package com.mhschmieder.fxacoustics.action;

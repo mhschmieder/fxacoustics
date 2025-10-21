@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2024 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,18 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxAcousticsGui Library
+ * This file is part of the FxAcoustics Library
  *
- * You should have received a copy of the MIT License along with the
- * FxAcousticsGui Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxAcoustics
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxacousticsgui
+ * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacousticsgui.control;
+package com.mhschmieder.fxacoustics.control;
 
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.fxacousticsgui.layout.DitheringPane;
-import com.mhschmieder.fxacousticsgui.layout.SplRangePane;
+import com.mhschmieder.fxacoustics.layout.DitheringPane;
+import com.mhschmieder.fxacoustics.layout.SplRangePane;
 import com.mhschmieder.fxguitoolkit.control.ControlFactory;
 import javafx.scene.control.Spinner;
 
