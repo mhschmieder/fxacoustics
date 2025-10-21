@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.fxacoustics.control;
 
-import com.mhschmieder.acousticstoolkit.CenterFrequencies;
-import com.mhschmieder.acousticstoolkit.FrequencyRange;
-import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
-import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleSelector;
+import com.mhschmieder.jacoustics.CenterFrequencies;
+import com.mhschmieder.jacoustics.FrequencyRange;
+import com.mhschmieder.jacoustics.FrequencySignalUtilities;
+import com.mhschmieder.jacoustics.RelativeBandwidth;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.apache.commons.math3.util.FastMath;

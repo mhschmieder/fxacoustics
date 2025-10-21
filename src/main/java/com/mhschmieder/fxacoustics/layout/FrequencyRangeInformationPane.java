@@ -30,13 +30,13 @@
  */
 package com.mhschmieder.fxacoustics.layout;
 
-import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
-import com.mhschmieder.pdftoolkit.PdfFonts;
-import com.mhschmieder.pdftoolkit.PdfTools;
+import com.mhschmieder.jacoustics.FrequencySignalUtilities;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jpdfexport.PdfFonts;
+import com.mhschmieder.jpdfexport.PdfTools;
 import com.pdfjet.Align;
 import com.pdfjet.PDF;
 import com.pdfjet.Page;

@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxacoustics.control;
 
-import com.mhschmieder.acousticstoolkit.Smoothing;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.XComboBox;
+import com.mhschmieder.jacoustics.Smoothing;
+import com.mhschmieder.jcommons.util.ClientProperties;
 
 /**
  * This is a selector for different Smoothing resolutions.

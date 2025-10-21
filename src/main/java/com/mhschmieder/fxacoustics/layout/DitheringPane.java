@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxacoustics.layout;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacoustics.control.AcousticsControlFactory;
 import com.mhschmieder.fxacoustics.control.AcousticsLabeledControlFactory;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

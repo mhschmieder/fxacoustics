@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.fxacoustics.stage;
 
-import com.mhschmieder.commonstoolkit.branding.ProductBranding;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacoustics.layout.DitheringPane;
 import com.mhschmieder.fxguitoolkit.action.SimulationActions;
 import com.mhschmieder.fxguitoolkit.control.PredictToolBar;
 import com.mhschmieder.fxguitoolkit.stage.XStage;
+import com.mhschmieder.jcommons.branding.ProductBranding;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.Node;
 import javafx.scene.control.ToolBar;
 
