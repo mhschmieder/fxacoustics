@@ -29,7 +29,7 @@
  * Project: https://github.com/mhschmieder/fxacoustics
  */
 /**
- * This package contains the FxAcousticsGui Library's dialogs for acoustics
+ * This package contains the FxAcoustics Library's dialogs for acoustics
  * support.
  *
  * @version 1.0

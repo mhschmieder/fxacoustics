@@ -29,7 +29,7 @@
  * Project: https://github.com/mhschmieder/fxacoustics
  */
 /**
- * This package contains the FxAcousticsGui Library's action framework for
+ * This package contains the FxAcoustics Library's action framework for
  * acoustics.
  *
  * @version 1.0
