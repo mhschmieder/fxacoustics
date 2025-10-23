@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxacoustics.swing;
 
-import com.mhschmieder.guitoolkit.table.ToggleButtonCellRenderer;
+import com.mhschmieder.jcontrols.table.ToggleButtonCellRenderer;
 
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.Color;

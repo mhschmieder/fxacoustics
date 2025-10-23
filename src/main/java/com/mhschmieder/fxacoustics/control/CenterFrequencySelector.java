@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxacoustics.control;
 
-import com.mhschmieder.fxguitoolkit.control.DoubleSelector;
+import com.mhschmieder.fxcontrols.control.DoubleSelector;
 import com.mhschmieder.jacoustics.CenterFrequencies;
 import com.mhschmieder.jacoustics.FrequencyRange;
 import com.mhschmieder.jacoustics.FrequencySignalUtilities;

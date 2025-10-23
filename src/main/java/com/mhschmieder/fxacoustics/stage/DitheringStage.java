@@ -31,9 +31,9 @@
 package com.mhschmieder.fxacoustics.stage;
 
 import com.mhschmieder.fxacoustics.layout.DitheringPane;
-import com.mhschmieder.fxguitoolkit.action.SimulationActions;
-import com.mhschmieder.fxguitoolkit.control.PredictToolBar;
-import com.mhschmieder.fxguitoolkit.stage.XStage;
+import com.mhschmieder.fxcontrols.action.SimulationActions;
+import com.mhschmieder.fxcontrols.control.PredictToolBar;
+import com.mhschmieder.fxcontrols.stage.XStage;
 import com.mhschmieder.jcommons.branding.ProductBranding;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.Node;

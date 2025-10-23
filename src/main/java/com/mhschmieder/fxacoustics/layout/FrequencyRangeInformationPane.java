@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxacoustics.layout;
 
-import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
-import com.mhschmieder.fxguitoolkit.GuiUtilities;
-import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
+import com.mhschmieder.fxcontrols.GuiUtilities;
+import com.mhschmieder.fxcontrols.layout.LayoutFactory;
+import com.mhschmieder.fxgraphics.paint.ColorUtilities;
 import com.mhschmieder.jacoustics.FrequencySignalUtilities;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jpdfexport.PdfFonts;

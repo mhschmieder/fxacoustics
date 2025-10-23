@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxacoustics.control;
 
-import com.mhschmieder.fxguitoolkit.control.ListViewUtilities;
-import com.mhschmieder.fxguitoolkit.control.XComboBox;
+import com.mhschmieder.fxcontrols.control.ListViewUtilities;
+import com.mhschmieder.fxcontrols.control.XComboBox;
 import com.mhschmieder.jacoustics.FrequencyRange;
 import com.mhschmieder.jacoustics.FrequencySignalUtilities;
 import com.mhschmieder.jacoustics.RelativeBandwidth;

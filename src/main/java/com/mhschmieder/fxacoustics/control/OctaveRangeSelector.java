@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxacoustics.control;
 
-import com.mhschmieder.fxguitoolkit.control.TextSelector;
+import com.mhschmieder.fxcontrols.control.TextSelector;
 import com.mhschmieder.jacoustics.FrequencyRange;
 import com.mhschmieder.jacoustics.RelativeBandwidth;
 import com.mhschmieder.jcommons.util.ClientProperties;

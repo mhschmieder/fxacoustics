@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxacoustics.control;
 
-import com.mhschmieder.fxguitoolkit.control.XComboBox;
+import com.mhschmieder.fxcontrols.control.XComboBox;
 import com.mhschmieder.jacoustics.Smoothing;
 import com.mhschmieder.jcommons.util.ClientProperties;
 

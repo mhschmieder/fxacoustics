@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxacoustics.control;
 
-import com.mhschmieder.fxguitoolkit.SceneGraphUtilities;
+import com.mhschmieder.fxcontrols.SceneGraphUtilities;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -47,7 +47,7 @@ public class AcousticsLabeledControlFactory {
 
     @SuppressWarnings("nls")
     public static Label getSplRangeLabel( final ClientProperties clientProperties ) {
-        return com.mhschmieder.fxguitoolkit.SceneGraphUtilities
+        return com.mhschmieder.fxcontrols.SceneGraphUtilities
                 .getLabeledLabel( clientProperties, BUNDLE_NAME, "settings", "splRange" );
     }
 

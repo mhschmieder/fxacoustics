@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxacoustics.swing;
 
-import com.mhschmieder.guitoolkit.component.DataViewXComponent;
 import com.mhschmieder.jacoustics.FrequencySignalUtilities;
+import com.mhschmieder.jcontrols.component.DataViewXComponent;
 
 import javax.swing.SwingConstants;
 import java.awt.Dimension;

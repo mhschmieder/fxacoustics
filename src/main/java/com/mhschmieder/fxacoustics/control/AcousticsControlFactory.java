@@ -32,7 +32,7 @@ package com.mhschmieder.fxacoustics.control;
 
 import com.mhschmieder.fxacoustics.layout.DitheringPane;
 import com.mhschmieder.fxacoustics.layout.SplRangePane;
-import com.mhschmieder.fxguitoolkit.control.ControlFactory;
+import com.mhschmieder.fxcontrols.control.ControlFactory;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.Spinner;
 
