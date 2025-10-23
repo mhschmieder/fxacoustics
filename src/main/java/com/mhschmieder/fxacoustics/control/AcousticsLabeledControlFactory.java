@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxacoustics.control;
 
-import com.mhschmieder.fxcontrols.SceneGraphUtilities;
+import com.mhschmieder.fxcontrols.control.ControlUtilities;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -47,25 +47,25 @@ public class AcousticsLabeledControlFactory {
 
     @SuppressWarnings("nls")
     public static Label getSplRangeLabel( final ClientProperties clientProperties ) {
-        return com.mhschmieder.fxcontrols.SceneGraphUtilities
+        return ControlUtilities
                 .getLabeledLabel( clientProperties, BUNDLE_NAME, "settings", "splRange" );
     }
 
     @SuppressWarnings("nls")
     public static CheckBox getAutoRangeSplCheckBox( final ClientProperties clientProperties ) {
-        return SceneGraphUtilities
+        return ControlUtilities
                 .getLabeledCheckBox( clientProperties, BUNDLE_NAME, "settings", "autoRangeSpl" );
     }
 
     @SuppressWarnings("nls")
     public static Label getDitheringLabel( final ClientProperties clientProperties ) {
-        return SceneGraphUtilities
+        return ControlUtilities
                 .getLabeledLabel( clientProperties, BUNDLE_NAME, "test", "ditheringAmount" );
     }
 
     @SuppressWarnings("nls")
     public static CheckBox getUseDitheringCheckBox( final ClientProperties clientProperties ) {
-        return SceneGraphUtilities
+        return ControlUtilities
                 .getLabeledCheckBox( clientProperties, BUNDLE_NAME, "test", "useDithering" );
     }
 }
