@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxacoustics.layout;
 
+import com.mhschmieder.fxcontrols.util.RegionUtilities;
 import com.mhschmieder.fxgraphics.paint.ColorUtilities;
-import com.mhschmieder.fxgui.layout.LayoutFactory;
 import com.mhschmieder.fxgui.util.GuiUtilities;
 import com.mhschmieder.jacoustics.FrequencySignalUtilities;
 import com.mhschmieder.jcommons.util.ClientProperties;
@@ -101,10 +101,14 @@ public final class FrequencyRangeInformationPane extends VBox {
         // number.
         _numberFormat = NumberFormat.getNumberInstance( _clientProperties.locale );
 
-        _relativeBandwidthLabel = GuiUtilities.getStatusLabel( RELATIVE_BANDWIDTH_LABEL_DEFAULT );
-        _centerFrequencyLabel = GuiUtilities.getStatusLabel( CENTER_FREQUENCY_LABEL_DEFAULT );
-        _startFrequencyLabel = GuiUtilities.getStatusLabel( START_FREQUENCY_LABEL_DEFAULT );
-        _stopFrequencyLabel = GuiUtilities.getStatusLabel( STOP_FREQUENCY_LABEL_DEFAULT );
+        _relativeBandwidthLabel = GuiUtilities.getStatusLabel(
+                RELATIVE_BANDWIDTH_LABEL_DEFAULT );
+        _centerFrequencyLabel = GuiUtilities.getStatusLabel(
+                CENTER_FREQUENCY_LABEL_DEFAULT );
+        _startFrequencyLabel = GuiUtilities.getStatusLabel(
+                START_FREQUENCY_LABEL_DEFAULT );
+        _stopFrequencyLabel = GuiUtilities.getStatusLabel(
+                STOP_FREQUENCY_LABEL_DEFAULT );
 
         getChildren().addAll( _relativeBandwidthLabel,
                               _centerFrequencyLabel,
@@ -124,7 +128,7 @@ public final class FrequencyRangeInformationPane extends VBox {
 
     public void setForegroundFromBackground( final Color backColor ) {
         // Set the new Background first, so it sets context for CSS derivations.
-        final Background background = LayoutFactory.makeRegionBackground( backColor );
+        final Background background = RegionUtilities.makeRegionBackground( backColor );
         setBackground( background );
 
         final Color foregroundColor = ColorUtilities.getForegroundFromBackground( backColor );
