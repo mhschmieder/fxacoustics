@@ -28,9 +28,9 @@
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacoustics.control;
+package com.mhschmieder.fxacousticscontrols.control;
 
-import com.mhschmieder.fxacoustics.action.AcousticsLabeledActionFactory;
+import com.mhschmieder.fxacousticscontrols.action.AcousticsLabeledActionFactory;
 import com.mhschmieder.fxcontrols.action.ActionFactory;
 import com.mhschmieder.fxcontrols.action.XAction;
 import com.mhschmieder.fxcontrols.action.XActionGroup;

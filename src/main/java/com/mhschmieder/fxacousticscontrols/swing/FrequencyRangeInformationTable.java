@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacoustics.swing;
+package com.mhschmieder.fxacousticscontrols.swing;
 
 import com.marineacoustics.jgui.component.DataViewXComponent;
 import com.mhschmieder.jacoustics.FrequencySignalUtilities;

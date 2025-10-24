@@ -28,9 +28,9 @@
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacoustics.stage;
+package com.mhschmieder.fxacousticscontrols.stage;
 
-import com.mhschmieder.fxacoustics.layout.SplRangePane;
+import com.mhschmieder.fxacousticscontrols.layout.DitheringPane;
 import com.mhschmieder.fxcontrols.action.SimulationActions;
 import com.mhschmieder.fxcontrols.control.PredictToolBar;
 import com.mhschmieder.fxgui.stage.XStage;
@@ -39,9 +39,9 @@ import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.Node;
 import javafx.scene.control.ToolBar;
 
-public final class SplRangeStage extends XStage {
+public final class DitheringStage extends XStage {
 
-    public static final String SPL_RANGE_FRAME_TITLE_DEFAULT = "Sound Field SPL Range"; //$NON-NLS-1$
+    public static final String DITHERING_FRAME_TITLE_DEFAULT = "Dithering Amount";
 
     // Declare the actions.
     public SimulationActions simulationActions;
@@ -50,46 +50,41 @@ public final class SplRangeStage extends XStage {
     public PredictToolBar toolBar;
 
     // Declare the main content pane.
-    public SplRangePane splRangePane;
+    public DitheringPane ditheringPane;
     
-    // Flag for whether to allow extended SPL Range values.
-    protected final boolean useExtendedRange;
+    // Initial value for dithering disablement (can't be passed to layout pane).
+    protected final boolean initialDisableDithering;
 
-    public SplRangeStage( final ProductBranding pProductBranding,
-                          final ClientProperties pClientProperties,
-                          final boolean pUseExtendedRange ) {
+    public DitheringStage( final ProductBranding pProductBranding,
+                           final ClientProperties pClientProperties,
+                           final boolean pInitialDisableDithering ) {
         // Always call the superclass constructor first!
-        super( SPL_RANGE_FRAME_TITLE_DEFAULT, 
-               "splRange", 
+        super( DITHERING_FRAME_TITLE_DEFAULT, 
+               "dithering", 
                pProductBranding, 
                pClientProperties );
         
-        useExtendedRange = pUseExtendedRange;
+        initialDisableDithering = pInitialDisableDithering;
 
-        try {
-            initStage();
-        }
-        catch ( final Exception ex ) {
-            ex.printStackTrace();
-        }
+        initStage();
     }
 
-    public int getSplRangeDb() {
-        // Forward this method to the SPL Range Pane.
-        return splRangePane.getSplRangeDb();
+    public double getDitheringAmount() {
+        // Forward this method to the Dithering Pane.
+        return ditheringPane.getDitheringAmount();
     }
 
     private void initStage() {
         // First have the superclass initialize its content.
-        initStage( "/icons/mhschmieder/JetPalette16.png", 
-                   300.0d, 
-                   180.0d,
+        initStage( "/icons/yusukeKamiyamane/fugue/ImageBlur16.png", 
+                   240.0d, 
+                   120.0d, 
                    false );
     }
 
-    public boolean isAutoRangeSpl() {
-        // Forward this method to the SPL Range Pane.
-        return splRangePane.isAutoRangeSpl();
+    public boolean isUseDithering() {
+        // Forward this method to the Dithering Pane.
+        return ditheringPane.isUseDithering();
     }
 
     // Load the relevant actions for this Stage.
@@ -102,26 +97,24 @@ public final class SplRangeStage extends XStage {
     @Override
     protected Node loadContent() {
         // Instantiate and return the custom Content Node.
-        splRangePane = new SplRangePane( clientProperties, 
-                                         useExtendedRange );
-        return splRangePane;
+        ditheringPane = new DitheringPane( clientProperties, initialDisableDithering );
+        return ditheringPane;
     }
 
     // Add the Tool Bar for this Stage.
     @Override
     public ToolBar loadToolBar() {
         // Build the Tool Bar for this Stage.
-        toolBar = new PredictToolBar( clientProperties, 
-                                      simulationActions );
+        toolBar = new PredictToolBar( clientProperties, simulationActions );
 
         // Return the Tool Bar so the superclass can use it.
         return toolBar;
     }
 
-    public void updateSplRange( final boolean autoRangeSpl, 
-                                final int splRangeDb ) {
-        // Forward this method to the SPL Range Pane.
-        splRangePane.updateSplRange( autoRangeSpl, 
-                                     splRangeDb );
+    // NOTE: This is the method to use when updating from Preferences.
+    public void updateDithering( final boolean useDithering, 
+                                 final double ditheringAmount ) {
+        // Forward this method to the Dithering Pane.
+        ditheringPane.updateDithering( useDithering, ditheringAmount );
     }
 }

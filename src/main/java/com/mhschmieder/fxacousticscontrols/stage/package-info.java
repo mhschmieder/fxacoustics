@@ -23,17 +23,12 @@
  *
  * This file is part of the FxAcoustics Library
  *
- * You should have received a copy of the MIT License along with the FxAcoustics
- * Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the
+ * FxAcoustics Library. If not, see <https://opensource.org/licenses/MIT>.
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
 /**
- * This package contains the FxAcoustics Library's controls for acoustics-based
- * concepts.
- *
- * @version 1.0
- *
- * @author Mark Schmieder
+ * This package is for Stages and Stage-related acoustic features using JavaFX.
  */
-package com.mhschmieder.fxacoustics.control;
+package com.mhschmieder.fxacousticscontrols.stage;

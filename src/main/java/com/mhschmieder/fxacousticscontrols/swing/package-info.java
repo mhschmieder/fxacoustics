@@ -1,4 +1,4 @@
-/*
+/**
  * MIT License
  *
  * Copyright (c) 2020, 2025 Mark Schmieder
@@ -29,11 +29,6 @@
  * Project: https://github.com/mhschmieder/fxacoustics
  */
 /**
- * This package contains the FxAcoustics Library's dialogs for acoustics
- * support.
- *
- * @version 1.0
- *
- * @author Mark Schmieder
+ * This package is for Swing-based components for acoustics concepts.
  */
-package com.mhschmieder.fxacoustics.layout;
+package com.mhschmieder.fxacousticscontrols.swing;

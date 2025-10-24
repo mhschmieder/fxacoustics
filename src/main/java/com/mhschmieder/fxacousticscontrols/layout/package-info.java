@@ -29,6 +29,11 @@
  * Project: https://github.com/mhschmieder/fxacoustics
  */
 /**
- * This package is for Stages and Stage-related acoustic features using JavaFX.
+ * This package contains the FxAcoustics Library's dialogs for acoustics
+ * support.
+ *
+ * @version 1.0
+ *
+ * @author Mark Schmieder
  */
-package com.mhschmieder.fxacoustics.stage;
+package com.mhschmieder.fxacousticscontrols.layout;

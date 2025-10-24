@@ -28,15 +28,15 @@
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacoustics.layout;
+package com.mhschmieder.fxacousticscontrols.layout;
 
 import com.mhschmieder.fxcontrols.util.RegionUtilities;
 import com.mhschmieder.fxgraphics.paint.ColorUtilities;
 import com.mhschmieder.fxgui.util.GuiUtilities;
 import com.mhschmieder.jacoustics.FrequencySignalUtilities;
 import com.mhschmieder.jcommons.util.ClientProperties;
-import com.mhschmieder.jpdfexport.PdfFonts;
-import com.mhschmieder.jpdfexport.PdfTools;
+import com.mhschmieder.jpdfreport.PdfFonts;
+import com.mhschmieder.jpdfreport.PdfTools;
 import com.pdfjet.Align;
 import com.pdfjet.PDF;
 import com.pdfjet.Page;

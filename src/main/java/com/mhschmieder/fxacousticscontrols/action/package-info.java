@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020, 2025 Mark Schmieder
@@ -23,12 +23,17 @@
  *
  * This file is part of the FxAcoustics Library
  *
- * You should have received a copy of the MIT License along with the
- * FxAcoustics Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxAcoustics
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
 /**
- * This package is for Swing-based components for acoustics concepts.
+ * This package contains the FxAcoustics Library's action framework for
+ * acoustics.
+ *
+ * @version 1.0
+ *
+ * @author Mark Schmieder
  */
-package com.mhschmieder.fxacoustics.swing;
+package com.mhschmieder.fxacousticscontrols.action;

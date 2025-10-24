@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mhschmieder</groupId>
-    <artifactId>fxacoustics</artifactId>
+    <artifactId>fxacousticscontrols</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>fxacoustics</name>
-    <url>https://github.com/mhschmieder/fxacoustics</url>
-    <description>Acoustics and audio engineering JavaFX GUI classes for Java.</description>
+    <name>fxacousticscontrols</name>
+    <url>https://github.com/mhschmieder/fxacousticscontrols</url>
+    <description>Acoustics and audio engineering JavaFX GUI controls for jacoustics.</description>
 
     <licenses>
         <license>
@@ -21,9 +21,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/mhschmieder/fxacoustics</url>
-        <connection>scm:git:git://github.com/mhschmieder/fxacoustics.git</connection>
-        <developerConnection>scm:git:git@github.com:mhschmieder/fxacoustics.git</developerConnection>
+        <url>https://github.com/mhschmieder/fxacousticscontrols</url>
+        <connection>scm:git:git://github.com/mhschmieder/fxacousticscontrols.git</connection>
+        <developerConnection>scm:git:git@github.com:mhschmieder/fxacousticscontrols.git</developerConnection>
     </scm>
 
     <developers>
@@ -71,7 +71,7 @@
         </dependency>
         <dependency>
         	<groupId>com.mhschmieder</groupId>
-        	<artifactId>jpdfexport</artifactId>
+        	<artifactId>jpdfreport</artifactId>
         	<version>0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

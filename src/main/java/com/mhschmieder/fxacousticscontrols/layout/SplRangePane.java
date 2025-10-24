@@ -28,10 +28,10 @@
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacoustics.layout;
+package com.mhschmieder.fxacousticscontrols.layout;
 
-import com.mhschmieder.fxacoustics.control.AcousticsControlFactory;
-import com.mhschmieder.fxacoustics.control.AcousticsLabeledControlFactory;
+import com.mhschmieder.fxacousticscontrols.control.AcousticsControlFactory;
+import com.mhschmieder.fxacousticscontrols.control.AcousticsLabeledControlFactory;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

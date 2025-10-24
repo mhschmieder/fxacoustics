@@ -36,4 +36,4 @@
  *
  * @author Mark Schmieder
  */
-package com.mhschmieder.fxacoustics;
+package com.mhschmieder.fxacousticscontrols;

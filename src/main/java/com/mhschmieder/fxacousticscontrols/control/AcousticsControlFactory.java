@@ -28,10 +28,10 @@
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacoustics.control;
+package com.mhschmieder.fxacousticscontrols.control;
 
-import com.mhschmieder.fxacoustics.layout.DitheringPane;
-import com.mhschmieder.fxacoustics.layout.SplRangePane;
+import com.mhschmieder.fxacousticscontrols.layout.DitheringPane;
+import com.mhschmieder.fxacousticscontrols.layout.SplRangePane;
 import com.mhschmieder.fxcontrols.control.ControlFactory;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.Spinner;

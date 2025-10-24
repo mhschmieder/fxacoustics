@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacoustics.control;
+package com.mhschmieder.fxacousticscontrols.control;
 
 import com.mhschmieder.fxcontrols.control.ListViewUtilities;
 import com.mhschmieder.fxcontrols.control.XComboBox;

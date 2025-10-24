@@ -28,45 +28,12 @@
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacoustics.control;
-
-import com.mhschmieder.fxcontrols.control.XComboBox;
-import com.mhschmieder.jacoustics.Smoothing;
-import com.mhschmieder.jcommons.util.ClientProperties;
-
 /**
- * This is a selector for different Smoothing resolutions.
+ * This package contains the FxAcoustics Library's controls for acoustics-based
+ * concepts.
+ *
+ * @version 1.0
+ *
+ * @author Mark Schmieder
  */
-public final class SmoothingSelector extends XComboBox< Smoothing > {
-
-    public SmoothingSelector( final ClientProperties pClientProperties,
-                              final boolean pToolbarContext ) {
-        // Always call the superclass constructor first!
-        super( pClientProperties,
-               "Frequency Response Smoothing", //$NON-NLS-1$
-               pToolbarContext,
-               false,
-               false,
-               Smoothing.values() );
-    }
-
-    public Smoothing getSmoothing() {
-        return getValue();
-    }
-
-    public int getSmoothingOctaveDivider() {
-        final Smoothing smoothing = getSmoothing();
-        final int octaveDivider = smoothing.toOctaveDivider();
-        return octaveDivider;
-    }
-
-    public void setSmoothing( final Smoothing smoothing ) {
-        setValue( smoothing );
-    }
-
-    public void setSmoothingOctaveDivider( final int octaveDivider ) {
-        // Sync up the Combo Box drop-list with the current Smoothing value.
-        final Smoothing smoothing = Smoothing.fromOctaveDivider( octaveDivider );
-        setSmoothing( smoothing );
-    }
-}
+package com.mhschmieder.fxacousticscontrols.control;

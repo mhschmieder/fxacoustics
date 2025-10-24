@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/fxacoustics
  */
-package com.mhschmieder.fxacoustics.swing;
+package com.mhschmieder.fxacousticscontrols.swing;
 
 import com.mhschmieder.jcontrols.table.ToggleButtonCellRenderer;
 
