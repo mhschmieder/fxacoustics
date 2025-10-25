@@ -30,8 +30,6 @@
  */
 package com.mhschmieder.fxacousticscontrols.control;
 
-import com.mhschmieder.fxacousticscontrols.layout.DitheringPane;
-import com.mhschmieder.fxacousticscontrols.layout.SplRangePane;
 import com.mhschmieder.fxcontrols.control.ControlFactory;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.Spinner;
@@ -41,71 +39,75 @@ import javafx.scene.control.Spinner;
  */
 public final class AcousticsControlFactory {
 
+    // Default SPL range, for best "out of box" experience.
+    public static final int SPL_RANGE_DB_DEFAULT = 42;
+
+    // Default Dithering Amount, for best "out of box" experience.
+    public static final double DITHERING_AMOUNT_DEFAULT = 8.0d;
+
     /**
      * The default constructor is disabled, as this is a static factory class.
      */
     private AcousticsControlFactory() {}
 
-    public static Spinner< Integer > getSplRangeSpinnerInstance( final ClientProperties clientProperties,
-                                                                 final boolean applyToolkitCss,
-                                                                 final boolean useExtendedRange ) {
+    public static Spinner< Integer > getSplRangeSpinnerInstance(
+            final ClientProperties clientProperties,
+            final boolean applyToolkitCss,
+            final boolean useExtendedRange ) {
         final int minimumSplRangeDb = useExtendedRange ? 3 : 42;
         final int maximumSplRangeDb = useExtendedRange ? 120 : 72;
         final int splRangeIncrementDb = 3;
-        final int defaultSplRangeDb = SplRangePane.SPL_RANGE_DB_DEFAULT;
+        final int defaultSplRangeDb = SPL_RANGE_DB_DEFAULT;
 
-        final String numericFormatterPattern = "##0"; //$NON-NLS-1$
+        final String numericFormatterPattern = "##0";
 
         // Try to limit the size as this control can get too wide.
-        final double maximumSpinnerWidth = 90d;
+        final double maximumSpinnerWidth = 90.0d;
 
         // Return the fully initialized SPL Range Spinner.
-        final String valueDescriptor = "an SPL range"; //$NON-NLS-1$
-        final Spinner< Integer > splRangeSpinner = ControlFactory
-                .makeIntegerSpinner( clientProperties,
-                                     applyToolkitCss,
-                                     valueDescriptor,
-                                     minimumSplRangeDb,
-                                     maximumSplRangeDb,
-                                     defaultSplRangeDb,
-                                     splRangeIncrementDb,
-                                     false,
-                                     numericFormatterPattern,
-                                     " dB", //$NON-NLS-1$
-                                     maximumSpinnerWidth );
-
-        return splRangeSpinner;
+        final String valueDescriptor = "an SPL range";
+        return ControlFactory.makeIntegerSpinner(
+                clientProperties,
+                applyToolkitCss,
+                valueDescriptor,
+                minimumSplRangeDb,
+                maximumSplRangeDb,
+                defaultSplRangeDb,
+                splRangeIncrementDb,
+                false,
+                numericFormatterPattern,
+                " dB",
+                maximumSpinnerWidth );
     }
 
-    public static Spinner< Double > getDitheringAmountSpinnerInstance( final ClientProperties clientProperties,
-                                                                       final boolean applyToolkitCss ) {
+    public static Spinner< Double > getDitheringAmountSpinnerInstance(
+            final ClientProperties clientProperties,
+            final boolean applyToolkitCss ) {
         // NOTE: The number formatter knows how to deal with percentages.
         final double minimumDitheringAmount = 0.0d;
         final double maximumDitheringAmount = 0.15d;
         final double ditheringAmountIncrement = 0.005d;
-        final double defaultDitheringAmount = DitheringPane.DITHERING_AMOUNT_DEFAULT;
+        final double defaultDitheringAmount = DITHERING_AMOUNT_DEFAULT;
 
-        final String numericFormatterPattern = "##0.#"; //$NON-NLS-1$
+        final String numericFormatterPattern = "##0.#";
 
         // Try to limit the size as this control can get too wide.
-        final double maximumSpinnerWidth = 90d;
+        final double maximumSpinnerWidth = 90.0d;
 
         // Return the fully initialized Dithering Amount Spinner.
         // TODO: Switch to a handcrafted percentile spinner (see examples).
-        final String valueDescriptor = "amount to dither individual loudspeakers"; //$NON-NLS-1$
-        final Spinner< Double > ditheringAmountSpinner = ControlFactory
-                .makeDoubleSpinner( clientProperties,
-                                    applyToolkitCss,
-                                    valueDescriptor,
-                                    minimumDitheringAmount,
-                                    maximumDitheringAmount,
-                                    defaultDitheringAmount,
-                                    ditheringAmountIncrement,
-                                    true,
-                                    numericFormatterPattern,
-                                    " %", //$NON-NLS-1$
-                                    maximumSpinnerWidth );
-
-        return ditheringAmountSpinner;
+        final String valueDescriptor = "amount to dither individual sound sources";
+        return ControlFactory.makeDoubleSpinner(
+                clientProperties,
+                applyToolkitCss,
+                valueDescriptor,
+                minimumDitheringAmount,
+                maximumDitheringAmount,
+                defaultDitheringAmount,
+                ditheringAmountIncrement,
+                true,
+                numericFormatterPattern,
+                " %",
+                maximumSpinnerWidth );
     }
 }
