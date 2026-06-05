@@ -160,9 +160,9 @@ public final class CenterFrequencySelector extends DoubleSelector {
             }
             break;
         case SIXTH_OCTAVE:
-        case TWELTH_OCTAVE:
-        case TWENTYFOURTH_OCTAVE:
-        case FORTYEIGHTH_OCTAVE:
+        case TWELFTH_OCTAVE:
+        case TWENTY_FOURTH_OCTAVE:
+        case FORTY_EIGHTH_OCTAVE:
             narrowBand = true;
 
             final int octaveDivider = relativeBandwidth.toOctaveDivider();

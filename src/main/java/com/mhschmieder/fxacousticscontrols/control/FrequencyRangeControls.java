@@ -63,8 +63,8 @@ public final class FrequencyRangeControls {
                 RelativeBandwidth.ONE_OCTAVE,
                 RelativeBandwidth.THIRD_OCTAVE,
                 RelativeBandwidth.SIXTH_OCTAVE,
-                RelativeBandwidth.TWELTH_OCTAVE,
-                RelativeBandwidth.TWENTYFOURTH_OCTAVE }; //,
+                RelativeBandwidth.TWELFTH_OCTAVE,
+                RelativeBandwidth.TWENTY_FOURTH_OCTAVE}; //,
                 //RelativeBandwidth.FORTYEIGHTH_OCTAVE };
         _relativeBandwidthSelector = ListViewUtilities.makeLabeledSelector(
                 pClientProperties,
